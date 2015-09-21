@@ -116,7 +116,7 @@
                 
                 asl_free( query );
                 
-                msg = aslresponse_next( response );
+                msg = asl_next( response );
                 
                 if( msg != NULL )
                 {
@@ -138,7 +138,7 @@
                         
                         [ ( NSMutableArray * )( senders[ sender ] ) addObject: message ];
                         
-                        msg = aslresponse_next( response );
+                        msg = asl_next( response );
                     }
                     
                     dispatch_sync
@@ -152,7 +152,7 @@
                     );
                 }
                 
-                aslresponse_free( response );
+                asl_release( response );
                 
                 [ NSThread sleepForTimeInterval: 1 ];
             }

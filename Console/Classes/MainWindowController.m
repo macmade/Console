@@ -38,7 +38,7 @@
     return [ self initWithSender: nil ];
 }
 
-- ( instancetype )initWithSender: ( NSString * )sender;
+- ( instancetype )initWithSender: ( NSString * )sender
 {
     if( ( self = [ self initWithWindowNibName: NSStringFromClass( self.class ) ] ) )
     {

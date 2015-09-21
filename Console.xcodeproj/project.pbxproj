@@ -35,6 +35,7 @@
 		05BF800E1BAC754400A88F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		05F921701BB0AACE00FD011C /* ASLSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLSender.h; sourceTree = "<group>"; };
 		05F921711BB0AACE00FD011C /* ASLSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLSender.m; sourceTree = "<group>"; };
+		05F921731BB0AC0F00FD011C /* Console-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Console-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 		05BF7FFA1BAC748800A88F65 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				05F921731BB0AC0F00FD011C /* Console-Prefix.pch */,
 				05BF80021BAC748800A88F65 /* Info.plist */,
 				05BF7FFB1BAC748800A88F65 /* main.m */,
 			);
@@ -439,6 +441,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Console/Console-Prefix.pch";
 				INFOPLIST_FILE = Console/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.Console";
@@ -451,6 +455,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Console/Console-Prefix.pch";
 				INFOPLIST_FILE = Console/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.Console";
