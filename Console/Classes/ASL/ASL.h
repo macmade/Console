@@ -33,8 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ASL: NSObject
 
-@property( atomic, readonly ) NSArray< ASLMessage * >                                * messages;
-@property( atomic, readonly ) NSDictionary< ASLSender *, NSArray< ASLMessage * > * > * senders;
+@property( atomic, readonly ) NSArray< ASLMessage * > * messages;
+@property( atomic, readonly ) NSArray< ASLSender  * > * senders;
 
 - ( instancetype )init;
 - ( instancetype )initWithSender: ( nullable NSString * )sender NS_DESIGNATED_INITIALIZER;

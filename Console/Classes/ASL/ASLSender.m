@@ -26,9 +26,11 @@
 
 @interface ASLSender()
 
-@property( atomic, readwrite, strong ) NSString * name;
-@property( atomic, readwrite, strong ) NSString * facility;
-@property( atomic, readwrite, strong ) NSImage  * icon;
+@property( atomic, readwrite, strong ) NSString                       * name;
+@property( atomic, readwrite, strong ) NSString                       * facility;
+@property( atomic, readwrite, strong ) NSImage                        * icon;
+@property( atomic, readwrite, strong ) NSArray< ASLMessage * >        * messages;
+@property( atomic, readwrite, strong ) NSMutableArray< ASLMessage * > * messagesMutable;
 
 @end
 
@@ -43,8 +45,10 @@
 {
     if( ( self = [ super init ] ) )
     {
-        self.name     = name;
-        self.facility = facility;
+        self.name            = name;
+        self.facility        = facility;
+        self.messagesMutable = [ NSMutableArray new ];
+        self.messages        = @[];
     }
     
     return self;
@@ -68,6 +72,13 @@
 - ( NSUInteger )hash
 {
     return self.name.hash;
+}
+
+- ( void )addMessage: ( ASLMessage * )message
+{
+    [ self.messagesMutable addObject: message ];
+    
+    self.messages = self.messagesMutable;
 }
 
 @end
