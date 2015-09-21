@@ -179,27 +179,11 @@
                                 </constraints>
                                 <animations/>
                             </visualEffectView>
-                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" autosaveName="MainWindowControllerVerticalSplit" dividerStyle="paneSplitter" id="qWy-Wg-gPj">
+                            <customView fixedFrame="YES" id="ri2-vd-Tks">
                                 <rect key="frame" x="210" y="0.0" width="590" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" id="ri2-vd-Tks">
-                                        <rect key="frame" x="0.0" y="0.0" width="590" height="239.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </customView>
-                                    <customView fixedFrame="YES" id="6Rw-Q0-FHE">
-                                        <rect key="frame" x="0.0" y="249.5" width="590" height="250.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <animations/>
-                                    </customView>
-                                </subviews>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
-                                <holdingPriorities>
-                                    <real value="250"/>
-                                    <real value="250"/>
-                                </holdingPriorities>
-                            </splitView>
+                            </customView>
                         </subviews>
                         <animations/>
                         <holdingPriorities>

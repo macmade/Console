@@ -54,6 +54,7 @@
     [ super windowDidLoad ];
     
     self.window.titlebarAppearsTransparent = YES;
+    self.window.titleVisibility            = NSWindowTitleHidden;
     
     [ self.asl start ];
     
