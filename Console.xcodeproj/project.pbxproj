@@ -16,6 +16,7 @@
 		05BF80101BAC754400A88F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF800C1BAC754400A88F65 /* Assets.xcassets */; };
 		05BF80111BAC754400A88F65 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BF800D1BAC754400A88F65 /* MainMenu.xib */; };
 		05F921721BB0AACE00FD011C /* ASLSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F921711BB0AACE00FD011C /* ASLSender.m */; };
+		05F921761BB0B6C900FD011C /* NumberStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F921751BB0B6C900FD011C /* NumberStringValueTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		05F921701BB0AACE00FD011C /* ASLSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLSender.h; sourceTree = "<group>"; };
 		05F921711BB0AACE00FD011C /* ASLSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLSender.m; sourceTree = "<group>"; };
 		05F921731BB0AC0F00FD011C /* Console-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Console-Prefix.pch"; sourceTree = "<group>"; };
+		05F921741BB0B6C900FD011C /* NumberStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberStringValueTransformer.h; sourceTree = "<group>"; };
+		05F921751BB0B6C900FD011C /* NumberStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberStringValueTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */,
 				05A78D3D1BB058850070E7F0 /* MainWindowController.h */,
 				05A78D3E1BB058850070E7F0 /* MainWindowController.m */,
+				05F921741BB0B6C900FD011C /* NumberStringValueTransformer.h */,
+				05F921751BB0B6C900FD011C /* NumberStringValueTransformer.m */,
 				05A78D361BB044F30070E7F0 /* ASL */,
 			);
 			path = Classes;
@@ -194,6 +199,7 @@
 				05A78D3C1BB050670070E7F0 /* ASL.m in Sources */,
 				05BF7FFC1BAC748800A88F65 /* main.m in Sources */,
 				05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */,
+				05F921761BB0B6C900FD011C /* NumberStringValueTransformer.m in Sources */,
 				05BF800F1BAC754400A88F65 /* ApplicationDelegate.m in Sources */,
 				05F921721BB0AACE00FD011C /* ASLSender.m in Sources */,
 			);
