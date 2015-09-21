@@ -24,7 +24,10 @@
 
 @import Cocoa;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ApplicationDelegate: NSObject < NSApplicationDelegate >
 
 @end
 
+NS_ASSUME_NONNULL_END
