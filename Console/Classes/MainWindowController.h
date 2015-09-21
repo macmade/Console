@@ -22,48 +22,12 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import "ApplicationDelegate.h"
-#import "MainWindowController.h"
+@import Cocoa;
 
-@interface ApplicationDelegate()
+NS_ASSUME_NONNULL_BEGIN
 
-@property( atomic, readwrite, strong ) NSMutableArray * controllers;
-
-- ( IBAction )newDocument: ( id )sender;
+@interface MainWindowController: NSWindowController
 
 @end
 
-@implementation ApplicationDelegate
-
-- ( void )applicationDidFinishLaunching: ( NSNotification * )notification
-{
-    ( void )notification;
-    
-    self.controllers = [ NSMutableArray new ];
-    
-    [ self newDocument: nil ];
-}
-
-- ( void )applicationWillTerminate: ( NSNotification * )notification
-{
-    ( void )notification;
-}
-
-- ( BOOL )applicationShouldTerminateAfterLastWindowClosed: ( NSApplication * )sender
-{
-    return NO;
-}
-
-- ( IBAction )newDocument: ( id )sender
-{
-    MainWindowController * controller;
-    
-    ( void )sender;
-    
-    controller = [ MainWindowController new ];
-    
-    [ self.controllers addObject: controller ];
-    [ controller showWindow: nil ];
-}
-
-@end
+NS_ASSUME_NONNULL_END
