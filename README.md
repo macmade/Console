@@ -9,7 +9,7 @@ Console
 
 ### About
 
-Console menu application.
+OS X console application.
 
 License
 -------
