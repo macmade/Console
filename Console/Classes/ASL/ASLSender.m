@@ -22,26 +22,52 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-@import Cocoa;
+#import "ASLSender.h"
 
-#import "ASLMessage.h"
+@interface ASLSender()
 
-@class ASLMessage;
-@class ASLSender;
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ASL: NSObject
-
-@property( atomic, readonly ) NSArray< ASLMessage * >                                * messages;
-@property( atomic, readonly ) NSDictionary< ASLSender *, NSArray< ASLMessage * > * > * senders;
-
-- ( instancetype )init;
-- ( instancetype )initWithSender: ( nullable NSString * )sender NS_DESIGNATED_INITIALIZER;
-
-- ( void )start;
-- ( void )stop;
+@property( atomic, readwrite, strong ) NSString * name;
+@property( atomic, readwrite, strong ) NSString * facility;
+@property( atomic, readwrite, strong ) NSImage  * icon;
 
 @end
 
-NS_ASSUME_NONNULL_END
+@implementation ASLSender
+
+- ( instancetype )init
+{
+    return [ self initWithName: @"" facility: @"" ];
+}
+
+- ( instancetype )initWithName: ( NSString * )name facility: ( NSString * )facility
+{
+    if( ( self = [ super init ] ) )
+    {
+        self.name     = name;
+        self.facility = facility;
+    }
+    
+    return self;
+}
+
+- ( instancetype )copyWithZone: ( NSZone * )zone
+{
+    return [ [ ASLSender alloc ] initWithName: self.name facility: self.facility ];
+}
+
+- ( BOOL )isEqual: ( id )object
+{
+    return [ self.name isEqual: object ];
+}
+
+- ( BOOL )isEqualTo: ( id )object
+{
+    return [ self.name isEqualTo: object ];
+}
+
+- ( NSUInteger )hash
+{
+    return self.name.hash;
+}
+
+@end

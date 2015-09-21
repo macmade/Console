@@ -24,23 +24,17 @@
 
 @import Cocoa;
 
-#import "ASLMessage.h"
-
-@class ASLMessage;
-@class ASLSender;
+#import <asl.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ASL: NSObject
+@interface ASLSender: NSObject < NSCopying >
 
-@property( atomic, readonly ) NSArray< ASLMessage * >                                * messages;
-@property( atomic, readonly ) NSDictionary< ASLSender *, NSArray< ASLMessage * > * > * senders;
+@property( atomic, readonly ) NSString * name;
+@property( atomic, readonly ) NSString * facility;
+@property( atomic, readonly ) NSImage  * icon;
 
-- ( instancetype )init;
-- ( instancetype )initWithSender: ( nullable NSString * )sender NS_DESIGNATED_INITIALIZER;
-
-- ( void )start;
-- ( void )stop;
+- ( instancetype )initWithName: ( NSString * )name facility: ( NSString * )facility NS_DESIGNATED_INITIALIZER;
 
 @end
 

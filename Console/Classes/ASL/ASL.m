@@ -24,12 +24,13 @@
 
 #import "ASL.h"
 #import "ASLMessage.h"
+#import "ASLSender.h"
 #import <asl.h>
 
 @interface ASL()
 
-@property( atomic, readwrite, strong ) NSArray< ASLMessage * >                               * messages;
-@property( atomic, readwrite, strong ) NSDictionary< NSString *, NSArray< ASLMessage * > * > * senders;
+@property( atomic, readwrite, strong ) NSArray< ASLMessage * >                                * messages;
+@property( atomic, readwrite, strong ) NSDictionary< ASLSender *, NSArray< ASLMessage * > * > * senders;
 
 @property( atomic, readwrite, strong ) NSString * sender;
 @property( atomic, readwrite, assign ) BOOL       run;
@@ -99,6 +100,7 @@
                 aslresponse  response;
                 aslmsg       msg;
                 ASLMessage * message;
+                ASLSender  * sender;
                 
                 query = asl_new( ASL_TYPE_QUERY );
                 
@@ -124,16 +126,17 @@
                     while( msg )
                     {
                         message = [ [ ASLMessage alloc ] initWithASLMessage: msg ];
+                        sender  = [ [ ASLSender alloc ] initWithName: message.sender facility: message.facility ];
                         lastID  = message.messageID;
                         
                         [ messages addObject: message ];
                         
                         if( senders[ message.sender ] == nil )
                         {
-                            [ senders setObject: [ NSMutableArray new ] forKey: message.sender ];
+                            [ senders setObject: [ NSMutableArray new ] forKey: sender ];
                         }
                         
-                        [ ( NSMutableArray * )( senders[ message.sender ] ) addObject: message ];
+                        [ ( NSMutableArray * )( senders[ sender ] ) addObject: message ];
                         
                         msg = aslresponse_next( response );
                     }
