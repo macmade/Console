@@ -28,11 +28,13 @@
 
 @interface ASL()
 
-@property( atomic, readwrite, strong ) NSArray< ASLMessage * > * messages;
-@property( atomic, readwrite, strong ) NSString                * sender;
-@property( atomic, readwrite, assign ) BOOL                      run;
-@property( atomic, readwrite, assign ) BOOL                      runing;
-@property( atomic, readwrite, assign ) BOOL                      exit;
+@property( atomic, readwrite, strong ) NSArray< ASLMessage * >                               * messages;
+@property( atomic, readwrite, strong ) NSDictionary< NSString *, NSArray< ASLMessage * > * > * senders;
+
+@property( atomic, readwrite, strong ) NSString * sender;
+@property( atomic, readwrite, assign ) BOOL       run;
+@property( atomic, readwrite, assign ) BOOL       runing;
+@property( atomic, readwrite, assign ) BOOL       exit;
 
 - ( void )processMessages;
 
@@ -51,6 +53,7 @@
     {
         self.sender   = sender;
         self.messages = @[];
+        self.senders  = @{};
         
         [ NSThread detachNewThreadSelector: @selector( processMessages ) toTarget: self withObject: nil ];
     }
@@ -77,9 +80,10 @@
 
 - ( void )processMessages
 {
-    NSUInteger       lastID;
-    aslclient        client;
-    NSMutableArray * messages;
+    NSUInteger            lastID;
+    aslclient             client;
+    NSMutableArray      * messages;
+    NSMutableDictionary * senders;
     
     @autoreleasepool
     {
@@ -115,6 +119,7 @@
                 if( msg != NULL )
                 {
                     messages = [ self.messages mutableCopy ];
+                    senders  = [ self.senders  mutableCopy ];
                     
                     while( msg )
                     {
@@ -122,6 +127,13 @@
                         lastID  = message.messageID;
                         
                         [ messages addObject: message ];
+                        
+                        if( senders[ message.sender ] == nil )
+                        {
+                            [ senders setObject: [ NSMutableArray new ] forKey: message.sender ];
+                        }
+                        
+                        [ ( NSMutableArray * )( senders[ message.sender ] ) addObject: message ];
                         
                         msg = aslresponse_next( response );
                     }
@@ -132,6 +144,7 @@
                         ^( void )
                         {
                             self.messages = [ NSArray arrayWithArray: messages ];
+                            self.senders  = [ NSDictionary dictionaryWithDictionary: senders ];
                         }
                     );
                 }
