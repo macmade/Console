@@ -53,7 +53,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="34" rowSizeStyle="automatic" viewBased="YES" id="PSb-lX-Haz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="437"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -161,7 +161,7 @@
                                                 </tableView>
                                             </subviews>
                                             <animations/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="backgroundColor"/>
                                         </clipView>
                                         <animations/>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8rP-s4-iPV">
@@ -194,7 +194,7 @@
                                     <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SOi-Zg-bEs">
                                         <rect key="frame" x="0.0" y="459" width="590" height="41"/>
                                         <subviews>
-                                            <searchField wantsLayer="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-IU-pVp">
+                                            <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hS0-IU-pVp">
                                                 <rect key="frame" x="20" y="9" width="496" height="22"/>
                                                 <animations/>
                                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="URc-gQ-W9Y">
@@ -203,7 +203,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </searchFieldCell>
                                             </searchField>
-                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-Rh-ETr">
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-Rh-ETr">
                                                 <rect key="frame" x="524" y="10" width="46" height="19"/>
                                                 <animations/>
                                                 <buttonCell key="cell" type="recessed" title="Clear" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Uqr-MU-WOg">
@@ -212,6 +212,14 @@
                                                 </buttonCell>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xUf-Rh-ETr" firstAttribute="top" secondItem="SOi-Zg-bEs" secondAttribute="top" constant="12" id="cWP-vl-oBl"/>
+                                            <constraint firstItem="xUf-Rh-ETr" firstAttribute="leading" secondItem="hS0-IU-pVp" secondAttribute="trailing" constant="8" symbolic="YES" id="ieD-TF-XOq"/>
+                                            <constraint firstItem="hS0-IU-pVp" firstAttribute="leading" secondItem="SOi-Zg-bEs" secondAttribute="leading" constant="20" id="iis-QP-5mS"/>
+                                            <constraint firstAttribute="trailing" secondItem="xUf-Rh-ETr" secondAttribute="trailing" constant="20" id="j2b-bF-08Q"/>
+                                            <constraint firstItem="hS0-IU-pVp" firstAttribute="top" secondItem="SOi-Zg-bEs" secondAttribute="top" constant="10" id="jBS-cW-OW3"/>
+                                            <constraint firstItem="hS0-IU-pVp" firstAttribute="centerY" secondItem="xUf-Rh-ETr" secondAttribute="centerY" id="lc6-qs-Fti"/>
+                                        </constraints>
                                         <animations/>
                                     </visualEffectView>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-pU-e8C">
@@ -320,7 +328,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cLd-kn-cel">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="cLd-kn-cel">
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
