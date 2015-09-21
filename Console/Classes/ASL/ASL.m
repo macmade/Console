@@ -174,7 +174,14 @@
     
     [ senders addObject: sender ];
     
-    self.senders = senders;
+    dispatch_sync
+    (
+        dispatch_get_main_queue(),
+        ^( void )
+        {
+            self.senders = senders;
+        }
+    );
     
     return sender;
 }

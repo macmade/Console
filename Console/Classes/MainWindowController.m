@@ -27,7 +27,8 @@
 
 @interface MainWindowController()
 
-@property( atomic, readwrite, strong ) ASL * asl;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController * sendersArrayController;
+@property( atomic, readwrite, strong )          ASL               * asl;
 
 @end
 
@@ -55,6 +56,8 @@
     self.window.titlebarAppearsTransparent = YES;
     
     [ self.asl start ];
+    
+    self.sendersArrayController.sortDescriptors = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES ] ];
 }
 
 @end
