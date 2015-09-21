@@ -34,7 +34,7 @@
 @property( atomic, readwrite, assign ) BOOL                      runing;
 @property( atomic, readwrite, assign ) BOOL                      exit;
 
-- ( void )getMessages;
+- ( void )processMessages;
 
 @end
 
@@ -52,7 +52,7 @@
         self.sender   = sender;
         self.messages = @[];
         
-        [ NSThread detachNewThreadSelector: @selector( getMessages ) toTarget: self withObject: nil ];
+        [ NSThread detachNewThreadSelector: @selector( processMessages ) toTarget: self withObject: nil ];
     }
     
     return self;
@@ -75,7 +75,7 @@
     self.run = NO;
 }
 
-- ( void )getMessages
+- ( void )processMessages
 {
     NSUInteger       lastID;
     aslclient        client;
@@ -126,7 +126,14 @@
                         msg = aslresponse_next( response );
                     }
                     
-                    self.messages = [ NSArray arrayWithArray: messages ];
+                    dispatch_sync
+                    (
+                        dispatch_get_main_queue(),
+                        ^( void )
+                        {
+                            self.messages = [ NSArray arrayWithArray: messages ];
+                        }
+                    );
                 }
                 
                 aslresponse_free( response );
