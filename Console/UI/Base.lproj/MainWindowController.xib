@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9046" systemVersion="15A282b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9046"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
@@ -12,16 +12,61 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Console" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Console" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="MainWindowController" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="800" height="500"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <splitView arrangesAllSubviews="NO" autosaveName="MainWindowControllerHorizontalSplit" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCs-QS-nSd">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                        <subviews>
+                            <visualEffectView appearanceType="vibrantDark" fixedFrame="YES" blendingMode="behindWindow" state="followsWindowActiveState" id="ClF-m5-lSg">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <animations/>
+                            </visualEffectView>
+                            <splitView fixedFrame="YES" arrangesAllSubviews="NO" autosaveName="MainWindowControllerVerticalSplit" dividerStyle="paneSplitter" id="qWy-Wg-gPj">
+                                <rect key="frame" x="210" y="0.0" width="590" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="ri2-vd-Tks">
+                                        <rect key="frame" x="0.0" y="0.0" width="590" height="239.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <animations/>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="6Rw-Q0-FHE">
+                                        <rect key="frame" x="0.0" y="249.5" width="590" height="250.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <animations/>
+                                    </customView>
+                                </subviews>
+                                <animations/>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                        </subviews>
+                        <animations/>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VCs-QS-nSd" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="4k6-GL-eoh"/>
+                    <constraint firstItem="VCs-QS-nSd" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" id="Bu0-XO-OuN"/>
+                    <constraint firstItem="VCs-QS-nSd" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="bQG-kO-yIf"/>
+                    <constraint firstItem="VCs-QS-nSd" firstAttribute="height" secondItem="EiT-Mj-1SZ" secondAttribute="height" id="kft-c6-afL"/>
+                </constraints>
                 <animations/>
             </view>
+            <point key="canvasLocation" x="592" y="426"/>
         </window>
     </objects>
 </document>

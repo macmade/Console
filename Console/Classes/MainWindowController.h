@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainWindowController: NSWindowController
 
+- ( instancetype )initWithSender: ( nullable NSString * )sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

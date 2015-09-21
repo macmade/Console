@@ -23,8 +23,11 @@
  ******************************************************************************/
 
 #import "MainWindowController.h"
+#import "ASL.h"
 
 @interface MainWindowController()
+
+@property( atomic, readwrite, strong ) ASL * asl;
 
 @end
 
@@ -32,12 +35,26 @@
 
 - ( instancetype )init
 {
-    return [ self initWithWindowNibName: NSStringFromClass( self.class ) ];
+    return [ self initWithSender: nil ];
+}
+
+- ( instancetype )initWithSender: ( NSString * )sender;
+{
+    if( ( self = [ self initWithWindowNibName: NSStringFromClass( self.class ) ] ) )
+    {
+        self.asl = [ [ ASL alloc ] initWithSender: sender ];
+    }
+    
+    return self;
 }
 
 - ( void )windowDidLoad
 {
     [ super windowDidLoad ];
+    
+    self.window.titlebarAppearsTransparent = YES;
+    
+    [ self.asl start ];
 }
 
 @end
