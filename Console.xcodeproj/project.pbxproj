@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D381BB044F30070E7F0 /* ASLMessage.m */; settings = {ASSET_TAGS = (); }; };
+		05A78D3C1BB050670070E7F0 /* ASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D3B1BB050670070E7F0 /* ASL.m */; settings = {ASSET_TAGS = (); }; };
 		05BF7FFC1BAC748800A88F65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF7FFB1BAC748800A88F65 /* main.m */; };
 		05BF800F1BAC754400A88F65 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		05BF80101BAC754400A88F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF800C1BAC754400A88F65 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
@@ -14,6 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05A78D371BB044F30070E7F0 /* ASLMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLMessage.h; sourceTree = "<group>"; };
+		05A78D381BB044F30070E7F0 /* ASLMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLMessage.m; sourceTree = "<group>"; };
+		05A78D3A1BB050670070E7F0 /* ASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASL.h; sourceTree = "<group>"; };
+		05A78D3B1BB050670070E7F0 /* ASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASL.m; sourceTree = "<group>"; };
 		05BF7FF41BAC748800A88F65 /* Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Console.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BF7FFB1BAC748800A88F65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		05BF80021BAC748800A88F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +40,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A78D361BB044F30070E7F0 /* ASL */ = {
+			isa = PBXGroup;
+			children = (
+				05A78D3A1BB050670070E7F0 /* ASL.h */,
+				05A78D3B1BB050670070E7F0 /* ASL.m */,
+				05A78D371BB044F30070E7F0 /* ASLMessage.h */,
+				05A78D381BB044F30070E7F0 /* ASLMessage.m */,
+			);
+			path = ASL;
+			sourceTree = "<group>";
+		};
 		05BF7FEB1BAC748800A88F65 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +91,7 @@
 			children = (
 				05BF80091BAC754400A88F65 /* ApplicationDelegate.h */,
 				05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */,
+				05A78D361BB044F30070E7F0 /* ASL */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -156,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A78D3C1BB050670070E7F0 /* ASL.m in Sources */,
 				05BF7FFC1BAC748800A88F65 /* main.m in Sources */,
+				05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */,
 				05BF800F1BAC754400A88F65 /* ApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +453,7 @@
 				05BF80071BAC748800A88F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
