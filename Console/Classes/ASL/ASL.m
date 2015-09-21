@@ -129,19 +129,20 @@
                         lastID  = message.messageID;
                         
                         [ messages addObject: message ];
-                        [ sender addMessage: message ];
+                        
+                        dispatch_sync
+                        (
+                            dispatch_get_main_queue(),
+                            ^( void )
+                            {
+                                [ sender addMessage: message ];
+                                
+                                self.messages = messages;
+                            }
+                        );
                         
                         msg = asl_next( response );
                     }
-                    
-                    dispatch_sync
-                    (
-                        dispatch_get_main_queue(),
-                        ^( void )
-                        {
-                            self.messages = [ NSArray arrayWithArray: messages ];
-                        }
-                    );
                 }
                 
                 asl_release( response );

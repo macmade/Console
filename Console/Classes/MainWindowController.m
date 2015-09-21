@@ -28,6 +28,7 @@
 @interface MainWindowController()
 
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * sendersArrayController;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController * messagesArrayController;
 @property( atomic, readwrite, strong )          ASL               * asl;
 
 @end
@@ -58,7 +59,30 @@
     
     [ self.asl start ];
     
-    self.sendersArrayController.sortDescriptors = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES ] ];
+    self.sendersArrayController.sortDescriptors  = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES ] ];
+    self.messagesArrayController.sortDescriptors = @[ [ NSSortDescriptor sortDescriptorWithKey: @"time" ascending: NO  ] ];
+    
+    [ self.sendersArrayController addObserver: self forKeyPath: @"selection" options: NSKeyValueObservingOptionNew context: NULL ];
+    
+    self.messagesArrayController.content = self.asl.messages;
+}
+
+- ( void )observeValueForKeyPath: ( NSString * )keyPath ofObject: ( id )object change: ( NSDictionary< NSString *, id > * )change context: ( void * )context
+{
+    ( void )change;
+    ( void )context;
+    
+    if( object == self.sendersArrayController && [ keyPath isEqualToString: @"selection" ] )
+    {
+        if( self.sendersArrayController.selectionIndexes.count == 0 )
+        {
+            self.messagesArrayController.content = self.asl.messages;
+        }
+        else
+        {
+            self.messagesArrayController.content = [ self.sendersArrayController.selection valueForKey: @"messages" ];
+        }
+    }
 }
 
 @end
