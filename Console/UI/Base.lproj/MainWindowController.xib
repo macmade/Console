@@ -37,6 +37,14 @@
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </searchFieldCell>
+                                        <connections>
+                                            <binding destination="Mli-3Q-Lgv" name="predicate" keyPath="filterPredicate" id="Gjd-v9-PmG">
+                                                <dictionary key="options">
+                                                    <string key="NSDisplayName">predicate</string>
+                                                    <string key="NSPredicateFormat">name.lowercaseString contains ($value).lowercaseString or facility.lowercaseString contains ($value).lowercaseString</string>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
                                     </searchField>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="36" horizontalPageScroll="10" verticalLineScroll="36" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm1-0K-hj3">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="437"/>
