@@ -27,17 +27,22 @@
 @interface ASLMessage()
 
 @property( atomic, readwrite, assign ) NSUInteger pid;
+@property( atomic, readwrite, strong ) NSNumber * pidNumber;
 @property( atomic, readwrite, assign ) NSUInteger uid;
+@property( atomic, readwrite, strong ) NSNumber * uidNumber;
 @property( atomic, readwrite, assign ) NSUInteger gid;
+@property( atomic, readwrite, strong ) NSNumber * gidNumber;
 @property( atomic, readwrite, strong ) NSString * facility;
 @property( atomic, readwrite, strong ) NSString * host;
 @property( atomic, readwrite, strong ) NSString * sender;
 @property( atomic, readwrite, strong ) NSUUID   * senderUUID;
 @property( atomic, readwrite, strong ) NSDate   * time;
 @property( atomic, readwrite, assign ) NSUInteger level;
+@property( atomic, readwrite, strong ) NSNumber * levelNumber;
 @property( atomic, readwrite, strong ) NSString * levelString;
 @property( atomic, readwrite, strong ) NSString * message;
 @property( atomic, readwrite, assign ) NSUInteger messageID;
+@property( atomic, readwrite, strong ) NSNumber * messageIDNumber;
 
 - ( NSString * )valueToString:          ( const char * )value;
 - ( NSDate   * )valueToDate:            ( const char * )value;
@@ -59,17 +64,22 @@
     {
         if( message != NULL )
         {
-            self.pid        = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_PID ) ];
-            self.uid        = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_UID ) ];
-            self.gid        = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_GID ) ];
-            self.facility   = [ self valueToString:          asl_get( message, ASL_KEY_FACILITY ) ];
-            self.host       = [ self valueToString:          asl_get( message, ASL_KEY_HOST ) ];
-            self.sender     = [ self valueToString:          asl_get( message, ASL_KEY_SENDER ) ];
-            self.senderUUID = [ self valueToUUID:            asl_get( message, ASL_KEY_SENDER_MACH_UUID ) ];
-            self.time       = [ self valueToDate:            asl_get( message, ASL_KEY_TIME ) ];
-            self.level      = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_LEVEL ) ];
-            self.message    = [ self valueToString:          asl_get( message, ASL_KEY_MSG ) ];
-            self.messageID  = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_MSG_ID ) ];
+            self.pid                = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_PID ) ];
+            self.pidNumber          = @( self.pid );
+            self.uid                = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_UID ) ];
+            self.uidNumber          = @( self.uid );
+            self.gid                = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_GID ) ];
+            self.gidNumber          = @( self.gid );
+            self.facility           = [ self valueToString:          asl_get( message, ASL_KEY_FACILITY ) ];
+            self.host               = [ self valueToString:          asl_get( message, ASL_KEY_HOST ) ];
+            self.sender             = [ self valueToString:          asl_get( message, ASL_KEY_SENDER ) ];
+            self.senderUUID         = [ self valueToUUID:            asl_get( message, ASL_KEY_SENDER_MACH_UUID ) ];
+            self.time               = [ self valueToDate:            asl_get( message, ASL_KEY_TIME ) ];
+            self.level              = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_LEVEL ) ];
+            self.levelNumber        = @( self.level );
+            self.message            = [ self valueToString:          asl_get( message, ASL_KEY_MSG ) ];
+            self.messageID          = [ self valueToUnsignedInteger: asl_get( message, ASL_KEY_MSG_ID ) ];
+            self.messageIDNumber    = @( self.messageID );
             
             switch( self.level )
             {

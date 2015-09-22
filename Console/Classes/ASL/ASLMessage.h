@@ -31,17 +31,22 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ASLMessage: NSObject
 
 @property( atomic, readonly ) NSUInteger pid;
+@property( atomic, readonly ) NSNumber * pidNumber;
 @property( atomic, readonly ) NSUInteger uid;
+@property( atomic, readonly ) NSNumber * uidNumber;
 @property( atomic, readonly ) NSUInteger gid;
+@property( atomic, readonly ) NSNumber * gidNumber;
 @property( atomic, readonly ) NSString * facility;
 @property( atomic, readonly ) NSString * host;
 @property( atomic, readonly ) NSString * sender;
 @property( atomic, readonly ) NSUUID   * senderUUID;
 @property( atomic, readonly ) NSDate   * time;
 @property( atomic, readonly ) NSUInteger level;
+@property( atomic, readonly ) NSNumber * levelNumber;
 @property( atomic, readonly ) NSString * levelString;
 @property( atomic, readonly ) NSString * message;
 @property( atomic, readonly ) NSUInteger messageID;
+@property( atomic, readonly ) NSNumber * messageIDNumber;
 
 - ( instancetype )initWithASLMessage: ( nullable aslmsg )message NS_DESIGNATED_INITIALIZER;
 
