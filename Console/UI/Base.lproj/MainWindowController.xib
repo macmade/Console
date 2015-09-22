@@ -203,6 +203,14 @@
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </searchFieldCell>
+                                                <connections>
+                                                    <binding destination="M7u-uq-g8l" name="predicate" keyPath="filterPredicate" id="C2P-qc-1hC">
+                                                        <dictionary key="options">
+                                                            <string key="NSDisplayName">predicate</string>
+                                                            <string key="NSPredicateFormat">sender.lowercaseString contains ($value).lowercaseString or facility.lowercaseString contains ($value).lowercaseString or message.lowercaseString contains ($value).lowercaseString</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
                                             </searchField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-Rh-ETr">
                                                 <rect key="frame" x="524" y="10" width="46" height="19"/>
@@ -302,6 +310,13 @@
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
+                                                                            <connections>
+                                                                                <binding destination="04g-bQ-0W0" name="value" keyPath="objectValue.pidNumber" id="vfU-fw-eMh">
+                                                                                    <dictionary key="options">
+                                                                                        <string key="NSValueTransformerName">NumberStringValueTransformer</string>
+                                                                                    </dictionary>
+                                                                                </binding>
+                                                                            </connections>
                                                                         </textField>
                                                                     </subviews>
                                                                     <animations/>
@@ -409,7 +424,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="hje-E9-duU">
-                                                                    <rect key="frame" x="363" y="1" width="225.5" height="17"/>
+                                                                    <rect key="frame" x="363" y="1" width="226" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMG-v8-48X">
