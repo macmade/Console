@@ -36,6 +36,7 @@
 @property( atomic, readwrite, assign ) BOOL       run;
 @property( atomic, readwrite, assign ) BOOL       runing;
 @property( atomic, readwrite, assign ) BOOL       exit;
+@property( atomic, readwrite, assign ) BOOL       inited;
 
 - ( void )processMessages;
 - ( ASLSender * )senderWithName: ( NSString * )name facility: ( NSString * )facility;
@@ -84,7 +85,6 @@
 {
     NSUInteger       lastID;
     aslclient        client;
-    NSMutableArray * messages;
     
     @autoreleasepool
     {
@@ -96,11 +96,13 @@
             self.runing = YES;
             
             {
-                aslmsg       query;
-                aslresponse  response;
-                aslmsg       msg;
-                ASLMessage * message;
-                ASLSender  * sender;
+                aslmsg           query;
+                aslresponse      response;
+                aslmsg           msg;
+                ASLMessage     * message;
+                ASLSender      * sender;
+                NSMutableArray * messages;
+                NSMutableArray * senders;
                 
                 query = asl_new( ASL_TYPE_QUERY );
                 
@@ -125,24 +127,46 @@
                     while( msg )
                     {
                         message = [ [ ASLMessage alloc ] initWithASLMessage: msg ];
-                        sender  = [ self senderWithName: message.sender facility: message.facility ];
                         lastID  = message.messageID;
                         
                         [ messages addObject: message ];
                         
-                        dispatch_sync
-                        (
-                            dispatch_get_main_queue(),
-                            ^( void )
-                            {
-                                [ sender addMessage: message ];
-                                
-                                self.messages = messages;
-                            }
-                        );
-                        
                         msg = asl_next( response );
                     }
+                    
+                    senders = [ self.senders mutableCopy ];
+                    
+                    for( message in messages )
+                    {
+                        sender = nil;
+                        
+                        for( sender in senders )
+                        {
+                            if( [ sender.name isEqualToString: message.sender ] )
+                            {
+                                break;
+                            }
+                        }
+                        
+                        if( sender == nil )
+                        {
+                            sender = [ [ ASLSender alloc ] initWithName: message.sender facility: message.facility ];
+                            
+                            [ senders addObject: sender ];
+                        }
+                        
+                        [ sender addMessage: message ];
+                    }
+                    
+                    dispatch_sync
+                    (
+                        dispatch_get_main_queue(),
+                        ^( void )
+                        {
+                            self.messages = messages;
+                            self.senders  = senders;
+                        }
+                    );
                 }
                 
                 asl_release( response );
