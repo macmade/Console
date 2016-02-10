@@ -3,7 +3,7 @@ Console
 
 [![Build Status](https://img.shields.io/travis/macmade/Console.svg?branch=master&style=flat)](https://travis-ci.org/macmade/Console)
 [![Issues](http://img.shields.io/github/issues/macmade/Console.svg?style=flat)](https://github.com/macmade/Console/issues)
-![Status](https://img.shields.io/badge/status-active-lightgray.svg?style=flat)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
 ![License](https://img.shields.io/badge/license-mit-brightgreen.svg?style=flat)
 [![Contact](https://img.shields.io/badge/contact-@macmade-blue.svg?style=flat)](https://twitter.com/macmade)
 
