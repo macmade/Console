@@ -23,3 +23,9 @@
  ******************************************************************************/
 
 #import "../Submodules/SeriousCode/clang-warnings.h"
+
+#ifdef __OBJC__
+    
+    @import Cocoa;
+    
+#endif
