@@ -28,4 +28,12 @@
     
     @import Cocoa;
     
+    #ifndef NS_ASSUME_NONNULL_BEGIN
+    #define NS_ASSUME_NONNULL_BEGIN
+    #endif
+    
+    #ifndef NS_ASSUME_NONNULL_END
+    #define NS_ASSUME_NONNULL_END
+    #endif
+    
 #endif
