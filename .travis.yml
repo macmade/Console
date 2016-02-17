@@ -1,4 +1,4 @@
 language: objective-c
 xcode_project: Console.xcodeproj
 xcode_scheme: Console
-
+osx_image: xcode7.3
