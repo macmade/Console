@@ -22,64 +22,31 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import "ApplicationDelegate.h"
 #import "AboutWindowController.h"
-#import "MainWindowController.h"
 
-@interface ApplicationDelegate()
+@interface AboutWindowController()
 
-@property( atomic, readwrite, strong ) NSMutableArray        * controllers;
-@property( atomic, readwrite, strong ) AboutWindowController * aboutWindowController;
-
-- ( IBAction )newDocument: ( id )sender;
+@property( atomic, readwrite, strong ) NSString * name;
+@property( atomic, readwrite, strong ) NSString * version;
+@property( atomic, readwrite, strong ) NSString * copyright;
 
 @end
 
-@implementation ApplicationDelegate
+@implementation AboutWindowController
 
-- ( void )applicationDidFinishLaunching: ( NSNotification * )notification
+- ( instancetype )init
 {
-    ( void )notification;
-    
-    self.controllers = [ NSMutableArray new ];
-    
-    [ self newDocument: nil ];
+    return [ self initWithWindowNibName: NSStringFromClass( self.class ) ];
 }
 
-- ( void )applicationWillTerminate: ( NSNotification * )notification
+- ( void )windowDidLoad
 {
-    ( void )notification;
-}
-
-- ( BOOL )applicationShouldTerminateAfterLastWindowClosed: ( NSApplication * )sender
-{
-    ( void )sender;
+    self.window.titlebarAppearsTransparent = YES;
+    self.window.titleVisibility            = NSWindowTitleHidden;
     
-    return NO;
-}
-
-- ( IBAction )newDocument: ( id )sender
-{
-    MainWindowController * controller;
-    
-    ( void )sender;
-    
-    controller = [ MainWindowController new ];
-    
-    [ self.controllers addObject: controller ];
-    [ controller showWindow: nil ];
-}
-
-- ( IBAction )showAboutWindow: ( id )sender
-{
-    if( self.aboutWindowController == nil )
-    {
-        self.aboutWindowController = [ AboutWindowController new ];
-        
-        [ self.aboutWindowController.window center ];
-    }
-    
-    [ self.aboutWindowController.window makeKeyAndOrderFront: sender ];
+    self.name      = [ [ NSBundle mainBundle ] objectForInfoDictionaryKey: @"CFBundleName" ];
+    self.version   = [ [ NSBundle mainBundle ] objectForInfoDictionaryKey: @"CFBundleShortVersionString" ];
+    self.copyright = [ [ NSBundle mainBundle ] objectForInfoDictionaryKey: @"NSHumanReadableCopyright" ];
 }
 
 @end

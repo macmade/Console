@@ -26,9 +26,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ApplicationDelegate: NSObject < NSApplicationDelegate >
-
-- ( IBAction )showAboutWindow: ( id )sender;
+@interface AboutWindowController: NSWindowController
 
 @end
 
