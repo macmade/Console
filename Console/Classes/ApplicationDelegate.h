@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @header      ApplicationDelegate.h
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 @import Cocoa;
 
 NS_ASSUME_NONNULL_BEGIN

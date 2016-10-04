@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @file        ASL.m
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "ASL.h"
 #import "ASLMessage.h"
 #import "ASLSender.h"

@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @header      NumberToStringValueTransformer.h
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 @import Cocoa;
 
 @interface NumberToStringValueTransformer: NSValueTransformer

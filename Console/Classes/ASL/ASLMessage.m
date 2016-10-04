@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @file        ASLMessage.m
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "ASLMessage.h"
 
 @interface ASLMessage()

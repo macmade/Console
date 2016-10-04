@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @file        ApplicationDelegate.m
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "ApplicationDelegate.h"
 #import "AboutWindowController.h"
 #import "MainWindowController.h"

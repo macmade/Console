@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @file        MainWindowController.m
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "MainWindowController.h"
 #import "ASL.h"
 

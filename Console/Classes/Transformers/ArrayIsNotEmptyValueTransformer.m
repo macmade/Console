@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @file        ArrayIsNotEmptyValueTransformer.m
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "ArrayIsNotEmptyValueTransformer.h"
 
 @implementation ArrayIsNotEmptyValueTransformer

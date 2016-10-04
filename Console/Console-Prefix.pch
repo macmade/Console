@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @header      Preferences.pch
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "../Submodules/SeriousCode/clang-warnings.h"
 
 #ifdef __OBJC__

@@ -22,6 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
+/*!
+ * @file        NumberToStringValueTransformer.m
+ * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
+ */
+
 #import "NumberToStringValueTransformer.h"
 
 @implementation NumberToStringValueTransformer
