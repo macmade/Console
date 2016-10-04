@@ -64,9 +64,39 @@
     return [ [ ASLSender allocWithZone: zone ] initWithName: self.name facility: self.facility ];
 }
 
+- ( BOOL )isEqualToASLSender: ( ASLSender * )sender
+{
+    if( [ sender isKindOfClass: [ ASLSender class ] ] == NO )
+    {
+        return NO;
+    }
+    
+    if( [ self.name isEqualToString: sender.name ] == NO )
+    {
+        return NO;
+    }
+    
+    if( [ self.facility isEqualToString: sender.facility ] == NO )
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
 - ( BOOL )isEqual: ( id )object
 {
-    return [ self.name isEqual: object ];
+    if( object == self )
+    {
+        return YES;
+    }
+    
+    if( [ object isKindOfClass: [ ASLSender class ] ] == NO )
+    {
+        return NO;
+    }
+    
+    return [ self isEqualToASLSender: ( ASLSender * )object ];
 }
 
 - ( BOOL )isEqualTo: ( id )object
@@ -76,7 +106,7 @@
 
 - ( NSUInteger )hash
 {
-    return self.name.hash;
+    return [ self.name stringByAppendingString: self.facility ].hash;
 }
 
 - ( void )addMessage: ( ASLMessage * )message

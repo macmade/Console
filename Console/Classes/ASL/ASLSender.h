@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property( atomic, readonly ) NSArray< ASLMessage * > * messages;
 
 - ( instancetype )initWithName: ( NSString * )name facility: ( NSString * )facility NS_DESIGNATED_INITIALIZER;
-
+- ( BOOL )isEqualToASLSender: ( ASLSender * )sender;
 - ( void )addMessage: ( ASLMessage * )message;
 
 @end

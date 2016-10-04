@@ -148,7 +148,7 @@
                         
                         for( sender in senders )
                         {
-                            if( [ sender.name isEqualToString: message.sender ] )
+                            if( [ sender.name isEqualToString: message.sender ] && [ sender.facility isEqualToString: message.facility ] )
                             {
                                 break;
                             }
