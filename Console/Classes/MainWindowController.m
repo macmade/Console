@@ -64,7 +64,7 @@
     
     [ self.asl start ];
     
-    self.sendersArrayController.sortDescriptors  = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES ] ];
+    self.sendersArrayController.sortDescriptors  = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES selector: @selector( localizedCaseInsensitiveCompare: ) ] ];
     self.messagesArrayController.sortDescriptors = @[ [ NSSortDescriptor sortDescriptorWithKey: @"time" ascending: NO  ] ];
     
     [ self.sendersArrayController addObserver: self forKeyPath: @"selection" options: NSKeyValueObservingOptionNew context: NULL ];
