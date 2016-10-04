@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10102" systemVersion="15E39c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2338c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10102"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
@@ -18,15 +19,66 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="800" height="500"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <value key="minSize" type="size" width="800" height="500"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="fuS-Tu-O7q">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="2ql-pH-Tp5">
+                                <rect key="frame" x="252" y="60" width="296" height="380"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFF-xs-vxt">
+                                        <rect key="frame" x="20" y="104" width="256" height="256"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="j0V-ft-1mu"/>
+                                    </imageView>
+                                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Fd2-Qt-xTw">
+                                        <rect key="frame" x="132" y="64" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <binding destination="-2" name="animate" keyPath="asl.senders" id="IeJ-Ud-XzO">
+                                                <dictionary key="options">
+                                                    <string key="NSValueTransformerName">ArrayIsEmptyValueTransformer</string>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xk0-Pn-cFS">
+                                        <rect key="frame" x="56" y="20" width="184" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Loading messages..." id="Thr-Yr-hSm">
+                                            <font key="font" metaFont="systemThin" size="20"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="296" id="Etr-hk-zKJ"/>
+                                    <constraint firstAttribute="height" constant="380" id="w5r-Zp-Eci"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2ql-pH-Tp5" firstAttribute="centerY" secondItem="fuS-Tu-O7q" secondAttribute="centerY" id="MyL-zb-Xvj"/>
+                            <constraint firstItem="2ql-pH-Tp5" firstAttribute="centerX" secondItem="fuS-Tu-O7q" secondAttribute="centerX" id="vby-rc-B8i"/>
+                        </constraints>
+                        <connections>
+                            <binding destination="-2" name="hidden" keyPath="asl.senders" id="ka4-ke-WpR">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">ArrayIsNotEmptyValueTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </visualEffectView>
                     <splitView arrangesAllSubviews="NO" autosaveName="MainWindowControllerHorizontalSplit" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCs-QS-nSd">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                         <subviews>
-                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" state="followsWindowActiveState" id="ClF-m5-lSg">
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" id="ClF-m5-lSg">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -53,7 +105,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="34" rowSizeStyle="automatic" viewBased="YES" id="PSb-lX-Haz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="437"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -116,9 +168,9 @@
                                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="hYc-9o-Arg" name="title" keyPath="objectValue.messages.@count" id="WsI-Na-wfv">
+                                                                                <binding destination="hYc-9o-Arg" name="title" keyPath="objectValue.messages.@count" id="8DF-8V-MiM">
                                                                                     <dictionary key="options">
-                                                                                        <string key="NSValueTransformerName">NumberStringValueTransformer</string>
+                                                                                        <string key="NSValueTransformerName">NumberToStringValueTransformer</string>
                                                                                     </dictionary>
                                                                                 </binding>
                                                                             </connections>
@@ -180,7 +232,7 @@
                                 <rect key="frame" x="210" y="0.0" width="590" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SOi-Zg-bEs">
+                                    <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SOi-Zg-bEs">
                                         <rect key="frame" x="0.0" y="459" width="590" height="41"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-Q1-3pu">
@@ -190,9 +242,9 @@
                                                     <font key="font" metaFont="smallSystemBold"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <binding destination="M7u-uq-g8l" name="title" keyPath="arrangedObjects.@count" id="4zK-4D-h5l">
+                                                    <binding destination="M7u-uq-g8l" name="title" keyPath="arrangedObjects.@count" id="VYb-MF-TEC">
                                                         <dictionary key="options">
-                                                            <string key="NSValueTransformerName">NumberStringValueTransformer</string>
+                                                            <string key="NSValueTransformerName">NumberToStringValueTransformer</string>
                                                         </dictionary>
                                                     </binding>
                                                 </connections>
@@ -234,7 +286,7 @@
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEd-3m-Rxz">
                                         <rect key="frame" x="0.0" y="0.0" width="590" height="459"/>
                                         <clipView key="contentView" id="l0Y-bg-ISw">
-                                            <rect key="frame" x="0.0" y="23" width="590" height="436"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="590" height="459"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="LNN-oi-dbo" viewBased="YES" id="Rv6-Qf-jkK">
@@ -338,7 +390,6 @@
                                                     </connections>
                                                 </tableView>
                                             </subviews>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="0aL-rq-G4T">
                                             <rect key="frame" x="1" y="119" width="223" height="15"/>
@@ -370,12 +421,23 @@
                             <real value="250"/>
                             <real value="250"/>
                         </holdingPriorities>
+                        <connections>
+                            <binding destination="-2" name="hidden" keyPath="asl.senders" id="fvm-3q-3Nj">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">ArrayIsEmptyValueTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
                     </splitView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VCs-QS-nSd" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="4k6-GL-eoh"/>
                     <constraint firstItem="VCs-QS-nSd" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" id="Bu0-XO-OuN"/>
+                    <constraint firstItem="fuS-Tu-O7q" firstAttribute="height" secondItem="EiT-Mj-1SZ" secondAttribute="height" id="Dgj-Dz-KeE"/>
+                    <constraint firstItem="fuS-Tu-O7q" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="LM9-P3-Fhg"/>
+                    <constraint firstItem="fuS-Tu-O7q" firstAttribute="width" secondItem="EiT-Mj-1SZ" secondAttribute="width" id="LjJ-uG-0jN"/>
                     <constraint firstItem="VCs-QS-nSd" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="bQG-kO-yIf"/>
+                    <constraint firstItem="fuS-Tu-O7q" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="cRX-7g-Vv9"/>
                     <constraint firstItem="VCs-QS-nSd" firstAttribute="height" secondItem="EiT-Mj-1SZ" secondAttribute="height" id="kft-c6-afL"/>
                 </constraints>
             </view>

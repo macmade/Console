@@ -22,38 +22,8 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import "NumberStringValueTransformer.h"
+@import Cocoa;
 
-@implementation NumberStringValueTransformer
-
-+ ( BOOL )allowsReverseTransformation
-{
-    return YES;
-}
-
-+ ( Class )transformedValueClass
-{
-    return [ NSString class ];
-}
-
-- ( id )transformedValue: ( id )value
-{
-    if( [ value isKindOfClass: [ NSNumber class ] ] )
-    {
-        return ( ( NSNumber * )value ).stringValue;
-    }
-    
-    return nil;
-}
-
-- ( id )reverseTransformedValue: ( id )value
-{
-    if( [ value isKindOfClass: [ NSString class ] ] )
-    {
-        return [ NSNumber numberWithDouble: ( ( NSString * )value ).doubleValue ];
-    }
-    
-    return nil;
-}
+@interface ArrayIsNotEmptyValueTransformer: NSValueTransformer
 
 @end

@@ -22,8 +22,28 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-@import Cocoa;
+#import "ArrayIsEmptyValueTransformer.h"
 
-@interface NumberStringValueTransformer: NSValueTransformer
+@implementation ArrayIsEmptyValueTransformer
+
++ ( BOOL )allowsReverseTransformation
+{
+    return NO;
+}
+
++ ( Class )transformedValueClass
+{
+    return [ NSNumber class ];
+}
+
+- ( id )transformedValue: ( id )value
+{
+    if( [ value isKindOfClass: [ NSArray class ] ] )
+    {
+        return ( ( ( NSArray * )value ).count == 0 ) ? @1 : @0;
+    }
+    
+    return nil;
+}
 
 @end
