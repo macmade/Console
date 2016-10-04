@@ -23,8 +23,7 @@
  ******************************************************************************/
 
 @import Cocoa;
-
-#import <asl.h>
+@import asl;
 
 NS_ASSUME_NONNULL_BEGIN
 
