@@ -143,7 +143,7 @@
                                                                             <rect key="frame" x="33" y="14" width="163" height="17"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="RsI-ft-ekQ">
                                                                                 <font key="font" metaFont="systemUltraLight" size="13"/>
-                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
@@ -154,21 +154,21 @@
                                                                             <rect key="frame" x="33" y="3" width="163" height="13"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="fVJ-ib-o3I">
                                                                                 <font key="font" metaFont="systemUltraLight" size="10"/>
-                                                                                <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                             <connections>
                                                                                 <binding destination="hYc-9o-Arg" name="value" keyPath="objectValue.facility" id="Qwp-dB-hug"/>
                                                                             </connections>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="waT-KY-zPA">
+                                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qy0-MM-KrW">
                                                                             <rect key="frame" x="202" y="8" width="43" height="17"/>
-                                                                            <buttonCell key="cell" type="inline" title="Inline" bezelStyle="inline" alignment="center" enabled="NO" borderStyle="border" inset="2" id="c34-h7-Cp2">
+                                                                            <buttonCell key="cell" type="inline" title="Inline" bezelStyle="inline" alignment="center" refusesFirstResponder="YES" borderStyle="border" inset="2" id="JeO-67-N6p">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                             </buttonCell>
                                                                             <connections>
-                                                                                <binding destination="hYc-9o-Arg" name="title" keyPath="objectValue.messages.@count" id="8DF-8V-MiM">
+                                                                                <binding destination="hYc-9o-Arg" name="title" keyPath="objectValue.messages.@count" id="l3e-KX-Nh8">
                                                                                     <dictionary key="options">
                                                                                         <string key="NSValueTransformerName">NumberToStringValueTransformer</string>
                                                                                     </dictionary>
@@ -177,13 +177,13 @@
                                                                         </button>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="waT-KY-zPA" firstAttribute="centerY" secondItem="6SW-Il-Ju5" secondAttribute="centerY" id="AI0-3a-r4Z"/>
+                                                                        <constraint firstItem="qy0-MM-KrW" firstAttribute="centerY" secondItem="6SW-Il-Ju5" secondAttribute="centerY" id="8eQ-1W-5Ob"/>
                                                                         <constraint firstAttribute="trailing" secondItem="kjy-Tp-bB2" secondAttribute="trailing" constant="54" id="BAb-0W-2q1"/>
                                                                         <constraint firstItem="kjy-Tp-bB2" firstAttribute="leading" secondItem="6SW-Il-Ju5" secondAttribute="trailing" constant="8" symbolic="YES" id="BQw-CS-PBx"/>
                                                                         <constraint firstAttribute="trailing" secondItem="5yP-O0-O0v" secondAttribute="trailing" constant="54" id="DXB-Ef-mum"/>
                                                                         <constraint firstAttribute="bottom" secondItem="kjy-Tp-bB2" secondAttribute="bottom" constant="3" id="GFl-wc-BdM"/>
                                                                         <constraint firstItem="5yP-O0-O0v" firstAttribute="top" secondItem="hYc-9o-Arg" secondAttribute="top" constant="3" id="IwX-cs-WcJ"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="waT-KY-zPA" secondAttribute="trailing" constant="3" id="br8-01-Hj6"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="qy0-MM-KrW" secondAttribute="trailing" constant="3" id="Ntw-RX-HXs"/>
                                                                         <constraint firstItem="kjy-Tp-bB2" firstAttribute="leading" secondItem="hYc-9o-Arg" secondAttribute="leading" constant="35" id="c3j-zR-GqA"/>
                                                                         <constraint firstItem="kjy-Tp-bB2" firstAttribute="leading" secondItem="5yP-O0-O0v" secondAttribute="leading" id="cf5-NE-gp2"/>
                                                                         <constraint firstItem="6SW-Il-Ju5" firstAttribute="leading" secondItem="hYc-9o-Arg" secondAttribute="leading" constant="2" id="jky-Kg-9sd"/>
