@@ -30,6 +30,7 @@
 #import "ApplicationDelegate.h"
 #import "AboutWindowController.h"
 #import "MainWindowController.h"
+#import "Preferences.h"
 
 @interface ApplicationDelegate()
 
@@ -54,6 +55,8 @@
 - ( void )applicationWillTerminate: ( NSNotification * )notification
 {
     ( void )notification;
+    
+    [ Preferences sharedInstance ].firstLaunch = NO;
 }
 
 - ( BOOL )applicationShouldTerminateAfterLastWindowClosed: ( NSApplication * )sender
@@ -72,6 +75,7 @@
     controller = [ MainWindowController new ];
     
     [ self.controllers addObject: controller ];
+    [ controller.window center ];
     [ controller showWindow: nil ];
 }
 
