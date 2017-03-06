@@ -159,7 +159,7 @@
     }
     else if( object == self.messagesArrayController && [ keyPath isEqualToString: NSStringFromSelector( @selector( selection ) ) ] )
     {
-        if( self.messagesArrayController.selectionIndexes.count == 0 )
+        if( self.messagesArrayController.selectionIndexes.count != 1 )
         {
             self.textViewContainerVisibleConstraint.active = NO;
             self.textViewContainerHiddenConstraint.active  = YES;
