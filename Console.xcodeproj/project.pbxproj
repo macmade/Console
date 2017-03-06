@@ -52,6 +52,7 @@
 		05BF80091BAC754400A88F65 /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
 		05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
 		05BF800E1BAC754400A88F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		05D79B381E6E081200A9467D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		05F921701BB0AACE00FD011C /* ASLSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLSender.h; sourceTree = "<group>"; };
 		05F921711BB0AACE00FD011C /* ASLSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLSender.m; sourceTree = "<group>"; };
 		05F921731BB0AC0F00FD011C /* Console-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Console-Prefix.pch"; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		05BF7FEB1BAC748800A88F65 = {
 			isa = PBXGroup;
 			children = (
+				05D79B381E6E081200A9467D /* README.md */,
 				05BF7FF61BAC748800A88F65 /* Console */,
 				05BF7FF51BAC748800A88F65 /* Products */,
 			);
