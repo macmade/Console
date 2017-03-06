@@ -34,6 +34,7 @@
 
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * sendersArrayController;
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController * messagesArrayController;
+@property( atomic, readwrite, strong ) IBOutlet NSTextView        * textView;
 @property( atomic, readwrite, strong )          ASL               * asl;
 
 @end
