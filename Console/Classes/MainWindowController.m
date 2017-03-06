@@ -85,7 +85,7 @@
         }
         else
         {
-            self.messagesArrayController.content = [ self.sendersArrayController.selection valueForKey: @"messages" ];
+            self.messagesArrayController.content = [ self.sendersArrayController valueForKeyPath: @"selection.@distinctUnionOfArrays.messages" ];
         }
     }
 }
