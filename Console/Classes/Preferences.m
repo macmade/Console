@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2016 Jean-David Gadina - www.xs-labs.com
+ * Copyright (c) 2015 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,24 +22,16 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/*!
- * @file        Preferences.m
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
-
 #import "Preferences.h"
+
+@import ObjectiveC.runtime;
 
 NS_ASSUME_NONNULL_BEGIN
 
-NSString * const PreferencesNotificationDefaultsChanged = @"PreferencesNotificationDefaultsChanged";
-NSString * const PreferencesKeyFirstLaunch              = @"FirstLaunch";
-
 @interface Preferences()
 
-@property( atomic, readwrite, strong ) NSUserDefaults * defaults;
-
-- ( void )synchronizeDefaultsAndNotifyForKey: ( NSString * )key;
-- ( NSString * )propertyNameFromSetter: ( SEL )setter;
+@property( atomic, readwrite, assign ) BOOL                    inited;
+@property( atomic, readwrite, strong ) NSArray< NSString * > * properties;
 
 @end
 
@@ -57,91 +49,91 @@ NS_ASSUME_NONNULL_END
         &once,
         ^( void )
         {
-            instance = [ self new ];
+            instance = [ [ super allocWithZone: nil ] init ];
         }
     );
     
     return instance;
 }
 
++ ( instancetype )allocWithZone: ( struct _NSZone * )zone
+{
+    ( void )zone;
+    
+    return [ self sharedInstance ];
+}
+
 - ( instancetype )init
 {
-    NSString     * path;
-    NSDictionary * defaults;
+    if( self.inited )
+    {
+        return self;
+    }
     
     if( ( self = [ super init ] ) )
     {
-        path          = [ [ NSBundle mainBundle ] pathForResource: @"Defaults" ofType: @"plist" ];
-        defaults      = [ NSDictionary dictionaryWithContentsOfFile: path ];
-        self.defaults = [ NSUserDefaults standardUserDefaults ];
+        self.inited = YES;
         
-        [ self.defaults registerDefaults: defaults ];
+        [ [ NSUserDefaults standardUserDefaults ] registerDefaults: [ NSDictionary dictionaryWithContentsOfFile: [ [ NSBundle mainBundle ] pathForResource: @"Defaults" ofType: @"plist" ] ] ];
+        
+        {
+            unsigned int                   i;
+            objc_property_t              * list;
+            NSString                     * name;
+            NSMutableArray< NSString * > * properties;
+            
+            properties = [ NSMutableArray new ];
+            list       = class_copyPropertyList( self.class, &i );
+            
+            if( list )
+            {
+                while( i )
+                {
+                    name = [ NSString stringWithUTF8String: property_getName( list[ --i ] ) ];
+                    
+                    if( name == nil || name.length == 0 )
+                    {
+                        continue;
+                    }
+                    
+                    if( [ name isEqualToString: @"inited" ] || [ name isEqualToString: @"properties" ] )
+                    {
+                        continue;
+                    }
+                    
+                    [ properties addObject: name ];
+                    [ self setValue: [ [ NSUserDefaults standardUserDefaults ] objectForKey: name ] forKey: name ];
+                    [ self addObserver: self forKeyPath: name options: NSKeyValueObservingOptionNew context: NULL ];
+                }
+            }
+            
+            self.properties = [ NSArray arrayWithArray: properties ];
+            
+            free( list );
+        }
     }
     
     return self;
 }
 
-- ( instancetype )initWithCoder: ( NSCoder * )coder
+- ( void )dealloc
 {
-    ( void )coder;
-    
-    /*
-     * Because we use the Preferences object in XIB files, so we can use bindings.
-     * This way, even when instanciated through an XIB file, we provide the
-     * same unique instance.
-     */
-    return [ [ self class ] sharedInstance ];
-}
-
-- ( void )synchronizeDefaultsAndNotifyForKey: ( NSString * )key
-{
-    [ self.defaults synchronize ];
-    [ [ NSNotificationCenter defaultCenter ] postNotificationName: PreferencesNotificationDefaultsChanged object: key userInfo: nil ];
-}
-
-- ( NSString * )propertyNameFromSetter: ( SEL )setter
-{
-    NSString * set;
-    NSString * name;
-    
-    if( setter == nil )
+    for( NSString * p in self.properties )
     {
-        return @"";
-    }
-    
-    set = NSStringFromSelector( setter );
-    
-    if( [ set hasPrefix: @"set" ] && [ set hasSuffix: @":" ] )
-    {
-        name = [ set substringFromIndex: 4 ];
-        name = [ name substringToIndex: name.length - 1 ];
-        name = [ [ set substringWithRange: NSMakeRange( 3, 1 ) ].lowercaseString stringByAppendingString: name ];
-    }
-    
-    if( name == nil )
-    {
-        return @"";
-    }
-    
-    return name;
-}
-
-- ( BOOL )firstLaunch
-{
-    @synchronized( self )
-    {
-        return [ self.defaults boolForKey: PreferencesKeyFirstLaunch ];
+        [ self removeObserver: self forKeyPath: p ];
     }
 }
 
-- ( void )setFirstLaunch: ( BOOL )value
+- ( void )observeValueForKeyPath: ( NSString * )keyPath ofObject: ( id )object change: ( NSDictionary * )change context: ( void * )context
 {
-    @synchronized( self )
+    if( object == self && [ self.properties containsObject: keyPath ] )
     {
-        [ self willChangeValueForKey: [ self propertyNameFromSetter: _cmd ] ];
-        [ self.defaults setBool: value forKey: PreferencesKeyFirstLaunch ];
-        [ self synchronizeDefaultsAndNotifyForKey: PreferencesKeyFirstLaunch ];
-        [ self didChangeValueForKey: [ self propertyNameFromSetter: _cmd ] ];
+        [ [ NSUserDefaults standardUserDefaults ] setObject: [ self valueForKey: keyPath ] forKey: keyPath ];
+        [ [ NSUserDefaults standardUserDefaults ] synchronize ];
+    }
+    else
+    {
+        [ super observeValueForKeyPath: keyPath ofObject: object change: change context: context ];
     }
 }
 

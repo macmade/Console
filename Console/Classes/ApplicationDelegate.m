@@ -31,11 +31,13 @@
 #import "AboutWindowController.h"
 #import "MainWindowController.h"
 #import "Preferences.h"
+#import "PreferencesWindowController.h"
 
 @interface ApplicationDelegate()
 
-@property( atomic, readwrite, strong ) NSMutableArray        * controllers;
-@property( atomic, readwrite, strong ) AboutWindowController * aboutWindowController;
+@property( atomic, readwrite, strong ) NSMutableArray              * mainWindowControllers;
+@property( atomic, readwrite, strong ) AboutWindowController       * aboutWindowController;
+@property( atomic, readwrite, strong ) PreferencesWindowController * preferencesWindowController;
 
 - ( IBAction )newDocument: ( id )sender;
 
@@ -47,16 +49,15 @@
 {
     ( void )notification;
     
-    self.controllers = [ NSMutableArray new ];
+    self.mainWindowControllers = [ NSMutableArray new ];
     
     [ self newDocument: nil ];
+    [ Preferences sharedInstance ].lastStart = [ NSDate date ];
 }
 
 - ( void )applicationWillTerminate: ( NSNotification * )notification
 {
     ( void )notification;
-    
-    [ Preferences sharedInstance ].firstLaunch = NO;
 }
 
 - ( BOOL )applicationShouldTerminateAfterLastWindowClosed: ( NSApplication * )sender
@@ -66,7 +67,7 @@
     return NO;
 }
 
-- ( IBAction )newDocument: ( id )sender
+- ( IBAction )newDocument: ( nullable id )sender
 {
     MainWindowController * controller;
     
@@ -74,9 +75,13 @@
     
     controller = [ MainWindowController new ];
     
-    [ self.controllers addObject: controller ];
-    [ controller.window center ];
-    [ controller showWindow: nil ];
+    if( [ Preferences sharedInstance ].lastStart == nil )
+    {
+        [ controller.window center ];
+    }
+    
+    [ self.mainWindowControllers addObject: controller ];
+    [ controller.window makeKeyAndOrderFront: nil ];
 }
 
 - ( IBAction )showAboutWindow: ( id )sender
@@ -89,6 +94,18 @@
     }
     
     [ self.aboutWindowController.window makeKeyAndOrderFront: sender ];
+}
+
+- ( IBAction )showPreferencesWindow: ( id )sender
+{
+    if( self.preferencesWindowController == nil )
+    {
+        self.preferencesWindowController = [ PreferencesWindowController new ];
+        
+        [ self.preferencesWindowController.window center ];
+    }
+    
+    [ self.preferencesWindowController.window makeKeyAndOrderFront: sender ];
 }
 
 @end

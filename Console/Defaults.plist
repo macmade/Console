@@ -2,7 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>FirstLaunch</key>
-	<true/>
+	<key>fontName</key>
+	<string>Menlo</string>
+	<key>fontSize</key>
+	<integer>12</integer>
+	<key>backgroundColorR</key>
+	<integer>1</integer>
+	<key>backgroundColorG</key>
+	<integer>1</integer>
+	<key>backgroundColorB</key>
+	<integer>1</integer>
+	<key>foregroundColorR</key>
+	<integer>0</integer>
+	<key>foregroundColorG</key>
+	<integer>0</integer>
+	<key>foregroundColorB</key>
+	<integer>0</integer>
 </dict>
 </plist>

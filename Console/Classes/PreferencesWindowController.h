@@ -22,19 +22,11 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/*!
- * @header      ApplicationDelegate.h
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
-
 @import Cocoa;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ApplicationDelegate: NSObject < NSApplicationDelegate >
-
-- ( IBAction )showAboutWindow: ( id )sender;
-- ( IBAction )showPreferencesWindow: ( id )sender;
+@interface PreferencesWindowController: NSWindowController
 
 @end
 

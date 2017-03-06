@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2016 Jean-David Gadina - www.xs-labs.com
+ * Copyright (c) 2015 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,23 +22,23 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/*!
- * @header      Preferences.h
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
-
 @import Cocoa;
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT NSString * const PreferencesNotificationDefaultsChanged;
-FOUNDATION_EXPORT NSString * const PreferencesKeyFirstLaunch;
-
 @interface Preferences: NSObject
 
-@property( atomic, readwrite, assign ) BOOL firstLaunch;
-
 + ( instancetype )sharedInstance;
+
+@property( atomic, readwrite, strong, nullable ) NSDate   * lastStart;
+@property( atomic, readwrite, strong, nullable ) NSString * fontName;
+@property( atomic, readwrite, assign           ) CGFloat    fontSize;
+@property( atomic, readwrite, assign           ) CGFloat    backgroundColorR;
+@property( atomic, readwrite, assign           ) CGFloat    backgroundColorG;
+@property( atomic, readwrite, assign           ) CGFloat    backgroundColorB;
+@property( atomic, readwrite, assign           ) CGFloat    foregroundColorR;
+@property( atomic, readwrite, assign           ) CGFloat    foregroundColorG;
+@property( atomic, readwrite, assign           ) CGFloat    foregroundColorB;
 
 @end
 
