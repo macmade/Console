@@ -832,12 +832,12 @@
             </view>
             <point key="canvasLocation" x="592" y="426"/>
         </window>
-        <arrayController objectClassName="ASLSender" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" id="Mli-3Q-Lgv" userLabel="Senders">
+        <arrayController objectClassName="ASLSender" automaticallyPreparesContent="YES" selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="Mli-3Q-Lgv" userLabel="Senders">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="asl.senders" id="fW1-eA-8bO"/>
             </connections>
         </arrayController>
-        <arrayController id="M7u-uq-g8l" userLabel="Messages"/>
+        <arrayController automaticallyPreparesContent="YES" selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="M7u-uq-g8l" userLabel="Messages"/>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
