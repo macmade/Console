@@ -132,9 +132,10 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6SW-Il-Ju5">
-                                                                            <rect key="frame" x="2" y="4" width="25" height="25"/>
+                                                                            <rect key="frame" x="10" y="4" width="25" height="25"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="Qdl-R6-jNc"/>
+                                                                                <constraint firstAttribute="width" constant="25" id="md4-lp-UHP"/>
                                                                             </constraints>
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="CD5-k2-LyA"/>
                                                                             <connections>
@@ -142,7 +143,7 @@
                                                                             </connections>
                                                                         </imageView>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="5yP-O0-O0v">
-                                                                            <rect key="frame" x="33" y="14" width="263" height="17"/>
+                                                                            <rect key="frame" x="41" y="14" width="255" height="17"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="RsI-ft-ekQ">
                                                                                 <font key="font" metaFont="systemUltraLight" size="13"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,7 +154,7 @@
                                                                             </connections>
                                                                         </textField>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="kjy-Tp-bB2">
-                                                                            <rect key="frame" x="33" y="3" width="263" height="13"/>
+                                                                            <rect key="frame" x="41" y="3" width="255" height="13"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="fVJ-ib-o3I">
                                                                                 <font key="font" metaFont="systemUltraLight" size="10"/>
                                                                                 <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,9 +187,8 @@
                                                                         <constraint firstAttribute="bottom" secondItem="kjy-Tp-bB2" secondAttribute="bottom" constant="3" id="GFl-wc-BdM"/>
                                                                         <constraint firstItem="5yP-O0-O0v" firstAttribute="top" secondItem="hYc-9o-Arg" secondAttribute="top" constant="3" id="IwX-cs-WcJ"/>
                                                                         <constraint firstAttribute="trailing" secondItem="qy0-MM-KrW" secondAttribute="trailing" constant="3" id="Ntw-RX-HXs"/>
-                                                                        <constraint firstItem="kjy-Tp-bB2" firstAttribute="leading" secondItem="hYc-9o-Arg" secondAttribute="leading" constant="35" id="c3j-zR-GqA"/>
                                                                         <constraint firstItem="kjy-Tp-bB2" firstAttribute="leading" secondItem="5yP-O0-O0v" secondAttribute="leading" id="cf5-NE-gp2"/>
-                                                                        <constraint firstItem="6SW-Il-Ju5" firstAttribute="leading" secondItem="hYc-9o-Arg" secondAttribute="leading" constant="2" id="jky-Kg-9sd"/>
+                                                                        <constraint firstItem="6SW-Il-Ju5" firstAttribute="leading" secondItem="hYc-9o-Arg" secondAttribute="leading" constant="10" id="jky-Kg-9sd"/>
                                                                         <constraint firstItem="6SW-Il-Ju5" firstAttribute="centerY" secondItem="hYc-9o-Arg" secondAttribute="centerY" id="pjJ-eD-YAy"/>
                                                                     </constraints>
                                                                     <connections>
