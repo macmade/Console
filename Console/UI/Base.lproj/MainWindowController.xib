@@ -12,6 +12,7 @@
                 <outlet property="messagesArrayController" destination="M7u-uq-g8l" id="cRQ-vY-iHM"/>
                 <outlet property="sendersArrayController" destination="Mli-3Q-Lgv" id="Ivs-63-gC5"/>
                 <outlet property="textView" destination="uLg-Gk-xym" id="mOI-Fp-Few"/>
+                <outlet property="textViewContainer" destination="Sry-fW-DLz" id="t7s-3b-5lw"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="tK3-vp-aZ3"/>
             </connections>
         </customObject>
@@ -242,7 +243,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SOi-Zg-bEs">
-                                                        <rect key="frame" x="0.0" y="555" width="1039" height="41"/>
+                                                        <rect key="frame" x="0.0" y="556" width="1039" height="41"/>
                                                         <subviews>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-Q1-3pu">
                                                                 <rect key="frame" x="10" y="11" width="43" height="17"/>
@@ -296,13 +297,13 @@
                                                         </constraints>
                                                     </visualEffectView>
                                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEd-3m-Rxz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1039" height="555"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1039" height="556"/>
                                                         <clipView key="contentView" id="l0Y-bg-ISw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1039" height="555"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="1039" height="556"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="LNN-oi-dbo" viewBased="YES" id="Rv6-Qf-jkK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="1039" height="532"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="1039" height="533"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -742,6 +743,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="mEd-3m-Rxz" firstAttribute="width" secondItem="F04-MN-lMG" secondAttribute="width" id="18Y-7q-3gY"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="9Qv-kR-agS"/>
                                                     <constraint firstItem="mEd-3m-Rxz" firstAttribute="top" secondItem="SOi-Zg-bEs" secondAttribute="bottom" id="FTD-dI-EOP"/>
                                                     <constraint firstItem="SOi-Zg-bEs" firstAttribute="centerX" secondItem="F04-MN-lMG" secondAttribute="centerX" id="GeW-EU-S03"/>
                                                     <constraint firstItem="SOi-Zg-bEs" firstAttribute="top" secondItem="F04-MN-lMG" secondAttribute="top" id="QE3-YK-tLw"/>
@@ -755,7 +757,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOL-Hi-SqD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1039" height="203"/>
+                                                        <rect key="frame" x="0.0" y="1" width="1039" height="203"/>
                                                         <clipView key="contentView" id="RCJ-ff-SYR">
                                                             <rect key="frame" x="0.0" y="0.0" width="1039" height="203"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -786,6 +788,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="tOL-Hi-SqD" firstAttribute="width" secondItem="Sry-fW-DLz" secondAttribute="width" id="9VY-mh-MTs"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="CcT-ya-2LX"/>
                                                     <constraint firstItem="tOL-Hi-SqD" firstAttribute="centerX" secondItem="Sry-fW-DLz" secondAttribute="centerX" id="PQB-V0-ieA"/>
                                                     <constraint firstItem="tOL-Hi-SqD" firstAttribute="centerY" secondItem="Sry-fW-DLz" secondAttribute="centerY" id="Vrn-rB-HGo"/>
                                                     <constraint firstItem="tOL-Hi-SqD" firstAttribute="height" secondItem="Sry-fW-DLz" secondAttribute="height" id="i5V-62-WnT"/>

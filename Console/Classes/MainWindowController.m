@@ -33,10 +33,13 @@
 
 @interface MainWindowController()
 
-@property( atomic, readwrite, strong ) IBOutlet NSArrayController * sendersArrayController;
-@property( atomic, readwrite, strong ) IBOutlet NSArrayController * messagesArrayController;
-@property( atomic, readwrite, strong ) IBOutlet NSTextView        * textView;
-@property( atomic, readwrite, strong )          ASL               * asl;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController  * sendersArrayController;
+@property( atomic, readwrite, strong ) IBOutlet NSArrayController  * messagesArrayController;
+@property( atomic, readwrite, strong ) IBOutlet NSTextView         * textView;
+@property( atomic, readwrite, strong ) IBOutlet NSView             * textViewContainer;
+@property( atomic, readwrite, strong )          ASL                * asl;
+@property( atomic, readwrite, strong )          NSLayoutConstraint * textViewContainerHiddenConstraint;
+@property( atomic, readwrite, strong )          NSLayoutConstraint * textViewContainerVisibleConstraint;
 
 - ( void )updateDisplaySettings;
 
@@ -61,7 +64,9 @@
 
 - ( void )dealloc
 {
-    [ self.sendersArrayController removeObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) ];
+    [ self.sendersArrayController  removeObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) ];
+    [ self.messagesArrayController removeObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) ];
+    
     [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( fontName ) ) ];
     [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( fontSize ) ) ];
     [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorR ) ) ];
@@ -84,7 +89,8 @@
     self.sendersArrayController.sortDescriptors  = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES selector: @selector( localizedCaseInsensitiveCompare: ) ] ];
     self.messagesArrayController.sortDescriptors = @[ [ NSSortDescriptor sortDescriptorWithKey: @"time" ascending: NO  ] ];
     
-    [ self.sendersArrayController addObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ self.sendersArrayController  addObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ self.messagesArrayController addObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) options: NSKeyValueObservingOptionNew context: NULL ];
     
     self.messagesArrayController.content = self.asl.messages;
     self.textView.textContainerInset     = NSMakeSize( 10.0, 15.0 );
@@ -99,6 +105,25 @@
     [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorB ) ) options: NSKeyValueObservingOptionNew context: NULL ];
     
     [ self updateDisplaySettings ];
+    
+    {
+        NSPredicate        * predicate;
+        NSArray            * constraints;
+        NSLayoutConstraint * constraint;
+        
+        predicate                               = [ NSPredicate predicateWithFormat: @"firstAttribute = %d", NSLayoutAttributeHeight ];
+        constraints                             = [ self.textViewContainer.constraints filteredArrayUsingPredicate: predicate ];
+        constraint                              = constraints.firstObject;
+        constraint.active                       = NO;
+        self.textViewContainerVisibleConstraint = constraint;
+        
+        if( constraint )
+        {
+            self.textViewContainerHiddenConstraint = [ NSLayoutConstraint constraintWithItem: self.textViewContainer attribute: NSLayoutAttributeHeight relatedBy: NSLayoutRelationEqual toItem: nil attribute: NSLayoutAttributeHeight multiplier: 0.0 constant: 0.0 ];
+            
+            [ self.textViewContainer addConstraint: self.textViewContainerHiddenConstraint ];
+        }
+    }
 }
 
 - ( void )observeValueForKeyPath: ( NSString * )keyPath ofObject: ( id )object change: ( NSDictionary< NSString *, id > * )change context: ( void * )context
@@ -130,6 +155,19 @@
         else
         {
             self.messagesArrayController.content = [ self.sendersArrayController valueForKeyPath: @"selection.@distinctUnionOfArrays.messages" ];
+        }
+    }
+    else if( object == self.messagesArrayController && [ keyPath isEqualToString: NSStringFromSelector( @selector( selection ) ) ] )
+    {
+        if( self.messagesArrayController.selectionIndexes.count == 0 )
+        {
+            self.textViewContainerVisibleConstraint.active = NO;
+            self.textViewContainerHiddenConstraint.active  = YES;
+        }
+        else
+        {
+            self.textViewContainerHiddenConstraint.active  = NO;
+            self.textViewContainerVisibleConstraint.active = YES;
         }
     }
     else
