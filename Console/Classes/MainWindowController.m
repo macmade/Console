@@ -154,7 +154,7 @@
         }
         else
         {
-            self.messagesArrayController.content = [ self.sendersArrayController valueForKeyPath: @"selection.@distinctUnionOfArrays.messages" ];
+            self.messagesArrayController.content = [ self.sendersArrayController valueForKeyPath: @"selection.@unionOfArrays.messages" ];
         }
     }
     else if( object == self.messagesArrayController && [ keyPath isEqualToString: NSStringFromSelector( @selector( selection ) ) ] )
