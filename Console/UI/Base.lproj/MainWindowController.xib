@@ -333,7 +333,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="cur-3h-1v7">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="149" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="G9z-Dr-Lu3">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="G9z-Dr-Lu3">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -376,8 +376,8 @@
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="263" translatesAutoresizingMaskIntoConstraints="NO" id="4Qf-Ew-Wo3">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="14"/>
-                                                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="AXs-cu-e4P">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="279" height="14"/>
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="AXs-cu-e4P">
                                                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -388,7 +388,7 @@
                                                                                         </textField>
                                                                                     </subviews>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="trailing" secondItem="4Qf-Ew-Wo3" secondAttribute="trailing" constant="38" id="49x-ct-i7b"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="4Qf-Ew-Wo3" secondAttribute="trailing" constant="3" id="49x-ct-i7b"/>
                                                                                         <constraint firstItem="4Qf-Ew-Wo3" firstAttribute="centerY" secondItem="RBB-b2-JkB" secondAttribute="centerY" constant="1.5" id="6rM-gh-7ZH"/>
                                                                                         <constraint firstItem="4Qf-Ew-Wo3" firstAttribute="leading" secondItem="RBB-b2-JkB" secondAttribute="leading" constant="2" id="D5O-2i-Zrj"/>
                                                                                         <constraint firstAttribute="height" secondItem="4Qf-Ew-Wo3" secondAttribute="height" constant="3" id="k1K-tV-Nim"/>
@@ -422,7 +422,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-DW-FLP">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="119" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="x8s-Fb-l1D">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="x8s-Fb-l1D">
                                                                                                 <dateFormatter key="formatter" dateStyle="medium" timeStyle="short" doesRelativeDateFormatting="YES" id="Vjd-HZ-NIw"/>
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -468,7 +468,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-Lg-eQ0">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="79" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="Bz6-aY-XUk">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="Bz6-aY-XUk">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -513,7 +513,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-Jb-g9R">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="99" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="HRF-qU-N4K">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="HRF-qU-N4K">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -558,7 +558,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="Fnh-5r-OgE">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="99" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="nar-hK-MfX">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="nar-hK-MfX">
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -603,7 +603,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="qlv-b4-7hn">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="59" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="HER-7y-VRf">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="HER-7y-VRf">
                                                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="Con-Tl-f5h"/>
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -649,7 +649,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-2c-rud">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="59" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="7n9-Wy-pfg">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="7n9-Wy-pfg">
                                                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="VyK-6k-rsZ"/>
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -695,7 +695,7 @@
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-UQ-ShJ">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="59" height="14"/>
-                                                                                            <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="Y9s-3t-Tzd">
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="Y9s-3t-Tzd">
                                                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="JeE-sx-oTm"/>
                                                                                                 <font key="font" metaFont="smallSystem"/>
                                                                                                 <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
