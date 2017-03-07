@@ -475,7 +475,6 @@
                                                                                             </textFieldCell>
                                                                                             <connections>
                                                                                                 <binding destination="MQK-Pj-KnU" name="value" keyPath="objectValue.levelString" id="St3-YN-Ia1"/>
-                                                                                                <binding destination="MQK-Pj-KnU" name="textColor" keyPath="objectValue.levelColor" id="YM8-Vw-o1v"/>
                                                                                             </connections>
                                                                                         </textField>
                                                                                     </subviews>
