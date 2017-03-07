@@ -39,6 +39,7 @@
 		052CAA3C1DA39534001536E4 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
 		052CAA3F1DA39564001536E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutWindowController.xib; sourceTree = "<group>"; };
 		053291041DA44EF200E46312 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		057404831E6F57BB009F5A18 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		058CC9B51E6E123E00DC4DE5 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		05A78D371BB044F30070E7F0 /* ASLMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLMessage.h; sourceTree = "<group>"; };
 		05A78D381BB044F30070E7F0 /* ASLMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLMessage.m; sourceTree = "<group>"; };
@@ -139,9 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				05F921731BB0AC0F00FD011C /* Console-Prefix.pch */,
-				05BF80021BAC748800A88F65 /* Info.plist */,
-				05BF7FFB1BAC748800A88F65 /* main.m */,
 				053291041DA44EF200E46312 /* Defaults.plist */,
+				05BF80021BAC748800A88F65 /* Info.plist */,
+				057404831E6F57BB009F5A18 /* Macros.h */,
+				05BF7FFB1BAC748800A88F65 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

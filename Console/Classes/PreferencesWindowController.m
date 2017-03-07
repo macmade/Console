@@ -24,12 +24,7 @@
 
 #import "PreferencesWindowController.h"
 #import "Preferences.h"
-
-#define HEXCOLOR( c, a ) [ NSColor colorWithDeviceRed: ( ( CGFloat )( ( c >> 16 ) & 0x0000FF ) ) / ( CGFloat )255  \
-                                   green:              ( ( CGFloat )( ( c >>  8 ) & 0x0000FF ) ) / ( CGFloat )255  \
-                                   blue:               ( ( CGFloat )( ( c       ) & 0x0000FF ) ) / ( CGFloat )255  \
-                                   alpha:              ( CGFloat )a                                                \
-                         ]
+#import "Macros.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
