@@ -53,6 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property( atomic, readonly ) NSNumber * messageIDNumber;
 
 - ( instancetype )initWithASLMessage: ( nullable aslmsg )message NS_DESIGNATED_INITIALIZER;
+- ( BOOL )isEqualToASLMessage: ( ASLMessage * )message;
 
 @end
 

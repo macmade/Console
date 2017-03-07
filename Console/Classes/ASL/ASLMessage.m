@@ -104,6 +104,46 @@
     return self;
 }
 
+- ( BOOL )isEqualToASLMessage: ( ASLMessage * )message
+{
+    if( [ message isKindOfClass: [ ASLMessage class ] ] == NO )
+    {
+        return NO;
+    }
+    
+    if( self.messageID != message.messageID )
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+- ( BOOL )isEqual: ( id )object
+{
+    if( object == self )
+    {
+        return YES;
+    }
+    
+    if( [ object isKindOfClass: [ ASLMessage class ] ] == NO )
+    {
+        return NO;
+    }
+    
+    return [ self isEqualToASLMessage: ( ASLMessage * )object ];
+}
+
+- ( BOOL )isEqualTo: ( id )object
+{
+    return [ self isEqual: object ];
+}
+
+- ( NSUInteger )hash
+{
+    return self.messageID;
+}
+
 - ( NSString * )description
 {
     NSString * description;

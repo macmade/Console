@@ -109,6 +109,7 @@
                 ASLSender      * sender;
                 NSMutableArray * messages;
                 NSMutableArray * senders;
+                NSMutableArray * newMessages;
                 
                 query = asl_new( ASL_TYPE_QUERY );
                 
@@ -128,21 +129,30 @@
                 
                 if( msg != NULL )
                 {
-                    messages = [ self.messages mutableCopy ];
+                    messages    = [ self.messages mutableCopy ];
+                    newMessages = [ NSMutableArray new ];
                     
                     while( msg )
                     {
                         message = [ [ ASLMessage alloc ] initWithASLMessage: msg ];
-                        lastID  = message.messageID;
                         
-                        [ messages addObject: message ];
+                        if( message.messageID <= lastID )
+                        {
+                            continue;
+                        }
+                        
+                        lastID  = ( message.messageID > lastID ) ? message.messageID : lastID;
+                        
+                        [ newMessages addObject: message ];
                         
                         msg = asl_next( response );
                     }
                     
+                    [ messages addObjectsFromArray: newMessages ];
+                    
                     senders = [ self.senders mutableCopy ];
                     
-                    for( message in messages )
+                    for( message in newMessages )
                     {
                         sender = nil;
                         
@@ -177,7 +187,7 @@
                 
                 asl_release( response );
                 
-                [ NSThread sleepForTimeInterval: 1 ];
+                //[ NSThread sleepForTimeInterval: 1 ];
             }
         }
         

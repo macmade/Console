@@ -146,7 +146,7 @@
 
 - ( BOOL )isEqualTo: ( id )object
 {
-    return [ self.name isEqualTo: object ];
+    return [ self isEqual: object ];
 }
 
 - ( NSUInteger )hash
