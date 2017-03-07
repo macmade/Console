@@ -156,9 +156,21 @@
 
 - ( void )addMessage: ( ASLMessage * )message
 {
-    [ self.messagesMutable addObject: message ];
-    
-    self.messages = self.messagesMutable;
+    @synchronized( self )
+    {
+        [ self.messagesMutable addObject: message ];
+        
+        self.messages = self.messagesMutable;
+    }
+}
+
+- ( void )clear
+{
+    @synchronized( self )
+    {
+        self.messagesMutable = [ NSMutableArray new ];
+        self.messages        = self.messagesMutable;
+    }
 }
 
 @end

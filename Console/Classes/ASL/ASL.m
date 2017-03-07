@@ -72,9 +72,48 @@
 
 - ( void )dealloc
 {
+    ASLSender * sender;
+    
+    for( sender in self.senders )
+    {
+        [ sender removeObserver: self forKeyPath: NSStringFromSelector( @selector( messages ) ) ];
+    }
+    
     self.exit = YES;
     
     while( self.runing );
+}
+
+- ( void )observeValueForKeyPath: ( NSString * )keyPath ofObject: ( id )object change: ( NSDictionary * )change context: ( void * )context
+{
+    if( [ keyPath isEqualToString: NSStringFromSelector( @selector( messages ) ) ] && [ object isKindOfClass: [ ASLSender class ] ] )
+    {
+        dispatch_async
+        (
+            dispatch_get_main_queue(),
+            ^( void )
+            {
+                NSMutableArray * allMessages;
+                ASLSender      * sender;
+                
+                if( [ self.senders containsObject: object ] )
+                {
+                    allMessages = [ NSMutableArray new ];
+                    
+                    for( sender in self.senders )
+                    {
+                        [ allMessages addObjectsFromArray: sender.messages ];
+                    }
+                    
+                    self.messages = allMessages;
+                }
+            }
+        );
+    }
+    else
+    {
+        [ super observeValueForKeyPath: keyPath ofObject: object change: change context: context ];
+    }
 }
 
 - ( void )start
@@ -107,9 +146,9 @@
                 aslmsg           msg;
                 ASLMessage     * message;
                 ASLSender      * sender;
-                NSMutableArray * messages;
                 NSMutableArray * senders;
                 NSMutableArray * newMessages;
+                NSMutableArray * allMessages;
                 
                 query = asl_new( ASL_TYPE_QUERY );
                 
@@ -129,7 +168,6 @@
                 
                 if( msg != NULL )
                 {
-                    messages    = [ self.messages mutableCopy ];
                     newMessages = [ NSMutableArray new ];
                     
                     while( msg )
@@ -147,8 +185,6 @@
                         
                         msg = asl_next( response );
                     }
-                    
-                    [ messages addObjectsFromArray: newMessages ];
                     
                     senders = [ self.senders mutableCopy ];
                     
@@ -169,9 +205,24 @@
                             sender = [ [ ASLSender alloc ] initWithName: message.sender facility: message.facility ];
                             
                             [ senders addObject: sender ];
+                            [ sender addObserver: self forKeyPath: NSStringFromSelector( @selector( messages ) ) options: NSKeyValueObservingOptionNew context: NULL ];
                         }
                         
                         [ sender addMessage: message ];
+                    }
+                    
+                    if( newMessages.count == 0 )
+                    {
+                        allMessages = nil;
+                    }
+                    else
+                    {
+                        allMessages = [ NSMutableArray new ];
+                        
+                        for( sender in senders )
+                        {
+                            [ allMessages addObjectsFromArray: sender.messages ];
+                        }
                     }
                     
                     dispatch_sync
@@ -179,15 +230,17 @@
                         dispatch_get_main_queue(),
                         ^( void )
                         {
-                            self.messages = messages;
-                            self.senders  = senders;
+                            if( allMessages != nil )
+                            {
+                                self.messages = allMessages;
+                            }
+                            
+                            self.senders = senders;
                         }
                     );
                 }
                 
                 asl_release( response );
-                
-                //[ NSThread sleepForTimeInterval: 1 ];
             }
         }
         

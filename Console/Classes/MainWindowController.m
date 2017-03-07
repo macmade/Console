@@ -29,6 +29,7 @@
 
 #import "MainWindowController.h"
 #import "ASL.h"
+#import "ASLSender.h"
 #import "Preferences.h"
 
 @interface MainWindowController()
@@ -42,6 +43,7 @@
 @property( atomic, readwrite, strong )          NSLayoutConstraint * textViewContainerVisibleConstraint;
 
 - ( void )updateDisplaySettings;
+- ( IBAction )clearAllMessages: ( nullable id )sender;
 
 @end
 
@@ -89,6 +91,7 @@
     self.sendersArrayController.sortDescriptors  = @[ [ NSSortDescriptor sortDescriptorWithKey: @"name" ascending: YES selector: @selector( localizedCaseInsensitiveCompare: ) ] ];
     self.messagesArrayController.sortDescriptors = @[ [ NSSortDescriptor sortDescriptorWithKey: @"time" ascending: NO  ] ];
     
+    [ self.asl                     addObserver: self forKeyPath: NSStringFromSelector( @selector( messages ) )  options: NSKeyValueObservingOptionNew context: NULL ];
     [ self.sendersArrayController  addObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) options: NSKeyValueObservingOptionNew context: NULL ];
     [ self.messagesArrayController addObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) options: NSKeyValueObservingOptionNew context: NULL ];
     
@@ -170,9 +173,42 @@
             self.textViewContainerVisibleConstraint.active = YES;
         }
     }
+    else if( object == self.asl && [ keyPath isEqualToString: NSStringFromSelector( @selector( messages ) ) ] )
+    {
+        if( self.sendersArrayController.selectedObjects.count == 0 )
+        {
+            self.messagesArrayController.content = self.asl.messages;
+        }
+        else
+        {
+            self.messagesArrayController.content = [ self.sendersArrayController valueForKeyPath: @"selection.@unionOfArrays.messages" ];
+        }
+    }
     else
     {
         [ super observeValueForKeyPath: keyPath ofObject: object change: change context: context ];
+    }
+}
+
+- ( IBAction )clearAllMessages: ( nullable id )sender
+{
+    NSArray< ASLSender * > * senders;
+    ASLSender              * s;
+    
+    ( void )sender;
+    
+    if( self.sendersArrayController.selectedObjects.count )
+    {
+        senders = self.sendersArrayController.selectedObjects;
+    }
+    else
+    {
+        senders = self.sendersArrayController.arrangedObjects;
+    }
+    
+    for( s in senders )
+    {
+        [ s clear ];
     }
 }
 
