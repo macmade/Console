@@ -235,7 +235,7 @@
                                 <rect key="frame" x="361" y="0.0" width="1039" height="800"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-fd-bah">
+                                    <splitView arrangesAllSubviews="NO" autosaveName="MainWindowControllerVerticalSplit" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-fd-bah">
                                         <rect key="frame" x="0.0" y="0.0" width="1039" height="800"/>
                                         <subviews>
                                             <customView id="F04-MN-lMG">
@@ -305,7 +305,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="1039" height="556"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="LNN-oi-dbo" viewBased="YES" id="Rv6-Qf-jkK">
+                                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveName="MainWindowControllerMessageTable" rowSizeStyle="automatic" headerView="LNN-oi-dbo" viewBased="YES" id="Rv6-Qf-jkK">
                                                                     <rect key="frame" x="0.0" y="0.0" width="1039" height="533"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="3" height="2"/>
