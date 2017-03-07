@@ -210,6 +210,8 @@
 				TargetAttributes = {
 					05BF7FF31BAC748800A88F65 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 326Y53CJMD;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -528,7 +530,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Console/Console-Prefix.pch";
 				INFOPLIST_FILE = Console/Info.plist;
@@ -542,7 +546,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Console/Console-Prefix.pch";
 				INFOPLIST_FILE = Console/Info.plist;
