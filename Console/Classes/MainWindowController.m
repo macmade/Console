@@ -32,7 +32,7 @@
 #import "ASLSender.h"
 #import "Preferences.h"
 
-@interface MainWindowController()
+@interface MainWindowController() < NSTableViewDataSource >
 
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController  * sendersArrayController;
 @property( atomic, readwrite, strong ) IBOutlet NSArrayController  * messagesArrayController;
@@ -245,6 +245,34 @@
     
     self.textView.backgroundColor = background;
     self.textView.textColor       = foreground;
+}
+
+#pragma mark - NSTableViewDataSource
+
+- ( BOOL )tableView: ( NSTableView * )tableView writeRowsWithIndexes: ( NSIndexSet * )rowIndexes toPasteboard: ( NSPasteboard * )pasteboard
+{
+    ASLMessage                   * message;
+    NSArray< ASLMessage * >      * messages;
+    NSMutableArray< NSString * > * contents;
+    
+    [ tableView setDraggingSourceOperationMask: NSDragOperationCopy forLocal: NO ];
+    
+    messages = [ self.messagesArrayController.arrangedObjects objectsAtIndexes: rowIndexes ];
+    contents = [ NSMutableArray new ];
+    
+    for( message in messages )
+    {
+        [ contents addObject: message.message ];
+    }
+    
+    if( contents.count )
+    {
+        [ pasteboard setString: [ contents componentsJoinedByString: @"\n\n--------------------------------------------------------------------------------\n\n" ] forType: NSStringPboardType ];
+        
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

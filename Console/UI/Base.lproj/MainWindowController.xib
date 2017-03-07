@@ -726,6 +726,7 @@
                                                                         <binding destination="M7u-uq-g8l" name="content" keyPath="arrangedObjects" id="LKW-Hy-mdz"/>
                                                                         <binding destination="M7u-uq-g8l" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="LKW-Hy-mdz" id="M3r-Fa-7yW"/>
                                                                         <binding destination="M7u-uq-g8l" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="M3r-Fa-7yW" id="epE-yQ-Isc"/>
+                                                                        <outlet property="dataSource" destination="-2" id="uub-GH-9Hn"/>
                                                                     </connections>
                                                                 </tableView>
                                                             </subviews>
