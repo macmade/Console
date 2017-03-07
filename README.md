@@ -12,7 +12,9 @@ Console
 
 ### About
 
-Replacement for the macOS console application.
+A replacement for the default macOS console application, which I find completely broken since macOS 10.12 Sierra.
+
+![Main Window](Assets/MainWindow.png "Main Window")
 
 License
 -------
