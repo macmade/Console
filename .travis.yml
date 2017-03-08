@@ -2,3 +2,5 @@ language: objective-c
 xcode_project: Console.xcodeproj
 xcode_scheme: Console
 osx_image: xcode8.1
+script:
+    - xcodebuild build -project Console.xcodeproj -scheme Console
