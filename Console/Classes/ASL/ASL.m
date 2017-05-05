@@ -30,8 +30,7 @@
 #import "ASL.h"
 #import "ASLMessage.h"
 #import "ASLSender.h"
-
-@import asl;
+#import <asl.h>
 
 @interface ASL()
 

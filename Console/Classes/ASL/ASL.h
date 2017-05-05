@@ -27,8 +27,7 @@
  * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
  */
 
-@import Cocoa;
-
+#import <Cocoa/Cocoa.h>
 #import "ASLMessage.h"
 
 @class ASLMessage;

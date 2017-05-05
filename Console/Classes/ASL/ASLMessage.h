@@ -27,8 +27,8 @@
  * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
  */
 
-@import Cocoa;
-@import asl;
+#import <Cocoa/Cocoa.h>
+#import <asl.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

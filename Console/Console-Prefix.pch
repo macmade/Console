@@ -31,7 +31,7 @@
 
 #ifdef __OBJC__
     
-    @import Cocoa;
+    #import <Cocoa/Cocoa.h>
     
     #ifndef NS_ASSUME_NONNULL_BEGIN
     #define NS_ASSUME_NONNULL_BEGIN
