@@ -64,6 +64,8 @@ NS_ASSUME_NONNULL_END
 
 - ( instancetype )init
 {
+    NSDictionary * defaults;
+    
     if( self.inited )
     {
         return self;
@@ -73,7 +75,12 @@ NS_ASSUME_NONNULL_END
     {
         self.inited = YES;
         
-        [ [ NSUserDefaults standardUserDefaults ] registerDefaults: [ NSDictionary dictionaryWithContentsOfFile: [ [ NSBundle mainBundle ] pathForResource: @"Defaults" ofType: @"plist" ] ] ];
+        defaults = [ NSDictionary dictionaryWithContentsOfFile: [ [ NSBundle mainBundle ] pathForResource: @"Defaults" ofType: @"plist" ] ];
+        
+        if( defaults != nil )
+        {
+            [ [ NSUserDefaults standardUserDefaults ] registerDefaults: defaults ];
+        }
         
         {
             unsigned int                   i;

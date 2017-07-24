@@ -214,28 +214,40 @@
 
 - ( void )updateDisplaySettings
 {
-    NSFont  * font;
-    NSColor * background;
-    NSColor * foreground;
+    NSString * fontName;
+    NSFont   * font;
+    NSColor  * background;
+    NSColor  * foreground;
     
-    font = [ NSFont fontWithName: [ Preferences sharedInstance ].fontName size: [ Preferences sharedInstance ].fontSize ];
+    fontName = [ Preferences sharedInstance ].fontName;
+    font     = nil;
     
-    if( font == nil )
+    if( fontName.length > 0 )
     {
-        font = [ NSFont fontWithName: @"Consolas" size: 10 ];
+        font = [ NSFont fontWithName: fontName size: [ Preferences sharedInstance ].fontSize ];
     }
     
     if( font == nil )
     {
-        font = [ NSFont fontWithName: @"Menlo" size: 10 ];
+        font = [ NSFont fontWithName: @"Consolas" size: [ Preferences sharedInstance ].fontSize ];
     }
     
     if( font == nil )
     {
-        font = [ NSFont fontWithName: @"Monaco" size: 10 ];
+        font = [ NSFont fontWithName: @"Menlo" size: [ Preferences sharedInstance ].fontSize ];
     }
     
-    if( font )
+    if( font == nil )
+    {
+        font = [ NSFont fontWithName: @"Monaco" size: [ Preferences sharedInstance ].fontSize ];
+    }
+    
+    if( font == nil )
+    {
+        font = [ NSFont systemFontOfSize: [ Preferences sharedInstance ].fontSize ];
+    }
+    
+    if( font != nil )
     {
         self.textView.font = font;
     }

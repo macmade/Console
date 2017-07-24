@@ -165,12 +165,24 @@ NS_ASSUME_NONNULL_END
     NSFontManager * manager;
     NSFontPanel   * panel;
     NSFont        * font;
+    NSString      * fontName;
     
-    font    = [ NSFont fontWithName: [ Preferences sharedInstance ].fontName size: [ Preferences sharedInstance ].fontSize ];
+    fontName = [ Preferences sharedInstance ].fontName;
+    font     = nil;
+    
+    if( fontName.length > 0 )
+    {
+        font = [ NSFont fontWithName: fontName size: [ Preferences sharedInstance ].fontSize ];
+    }
+    
     manager = [ NSFontManager sharedFontManager ];
     panel   = [ manager fontPanel: YES ];
     
-    [ manager setSelectedFont: font isMultiple: NO ];
+    if( font != nil )
+    {
+        [ manager setSelectedFont: font isMultiple: NO ];
+    }
+    
     [ panel makeKeyAndOrderFront: sender ];
 }
 
