@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2015 Jean-David Gadina - www-xs-labs.com
+ * Copyright (c) 2017 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,36 +22,28 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/*!
- * @file        AboutWindowController.m
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
+import Cocoa
 
-#import "AboutWindowController.h"
-
-@interface AboutWindowController()
-
-@property( atomic, readwrite, strong ) NSString * name;
-@property( atomic, readwrite, strong ) NSString * version;
-@property( atomic, readwrite, strong ) NSString * copyright;
-
-@end
-
-@implementation AboutWindowController
-
-- ( instancetype )init
+@objc class AboutWindowController: NSWindowController
 {
-    return [ self initWithWindowNibName: NSStringFromClass( self.class ) ];
-}
-
-- ( void )windowDidLoad
-{
-    self.window.titlebarAppearsTransparent = YES;
-    self.window.titleVisibility            = NSWindowTitleHidden;
+    @objc private dynamic var name:      String?
+    @objc private dynamic var version:   String?
+    @objc private dynamic var copyright: String?
     
-    self.name      = [ [ NSBundle mainBundle ] objectForInfoDictionaryKey: @"CFBundleName" ];
-    self.version   = [ [ NSBundle mainBundle ] objectForInfoDictionaryKey: @"CFBundleShortVersionString" ];
-    self.copyright = [ [ NSBundle mainBundle ] objectForInfoDictionaryKey: @"NSHumanReadableCopyright" ];
+    override var windowNibName: NSNib.Name?
+    {
+        return NSNib.Name( NSStringFromClass( type( of: self ) ) )
+    }
+    
+    override func windowDidLoad()
+    {
+        super.windowDidLoad()
+        
+        self.window?.titlebarAppearsTransparent = true
+        self.window?.titleVisibility            = .hidden
+        
+        self.name      = Bundle.main.object( forInfoDictionaryKey: "CFBundleName"               ) as? String
+        self.version   = Bundle.main.object( forInfoDictionaryKey: "CFBundleShortVersionString" ) as? String
+        self.copyright = Bundle.main.object( forInfoDictionaryKey: "NSHumanReadableCopyright"   ) as? String
+    }
 }
-
-@end

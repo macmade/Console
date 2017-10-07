@@ -28,7 +28,7 @@
  */
 
 #import "ApplicationDelegate.h"
-#import "AboutWindowController.h"
+#import "Console-Swift.h"
 #import "MainWindowController.h"
 #import "Preferences.h"
 #import "PreferencesWindowController.h"
