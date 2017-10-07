@@ -39,7 +39,6 @@
 		055F188E1F893C5500EBDEE1 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		055F18911F893D0800EBDEE1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		055F18931F893D4E00EBDEE1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
-		057404831E6F57BB009F5A18 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		05A78D371BB044F30070E7F0 /* ASLMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLMessage.h; sourceTree = "<group>"; };
 		05A78D381BB044F30070E7F0 /* ASLMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLMessage.m; sourceTree = "<group>"; };
 		05A78D3A1BB050670070E7F0 /* ASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASL.h; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 			children = (
 				053291041DA44EF200E46312 /* Defaults.plist */,
 				05BF80021BAC748800A88F65 /* Info.plist */,
-				057404831E6F57BB009F5A18 /* Macros.h */,
 				05BF7FFB1BAC748800A88F65 /* main.m */,
 			);
 			name = "Supporting Files";

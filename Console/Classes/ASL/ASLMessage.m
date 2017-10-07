@@ -28,7 +28,6 @@
  */
 
 #import "ASLMessage.h"
-#import "Macros.h"
 
 @interface ASLMessage()
 
