@@ -30,8 +30,6 @@
 #import "ApplicationDelegate.h"
 #import "Console-Swift.h"
 #import "MainWindowController.h"
-#import "Preferences.h"
-#import "PreferencesWindowController.h"
 
 @interface ApplicationDelegate()
 
@@ -52,7 +50,7 @@
     self.mainWindowControllers = [ NSMutableArray new ];
     
     [ self newDocument: nil ];
-    [ Preferences sharedInstance ].lastStart = [ NSDate date ];
+    [ Preferences shared ].lastStart = [ NSDate date ];
 }
 
 - ( void )applicationWillTerminate: ( NSNotification * )notification
@@ -75,7 +73,7 @@
     
     controller = [ MainWindowController new ];
     
-    if( [ Preferences sharedInstance ].lastStart == nil )
+    if( [ Preferences shared ].lastStart == nil )
     {
         [ controller.window center ];
     }

@@ -27,10 +27,10 @@
  * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
  */
 
+#import "Console-Swift.h"
 #import "MainWindowController.h"
 #import "ASL.h"
 #import "ASLSender.h"
-#import "Preferences.h"
 
 @interface MainWindowController() < NSTableViewDataSource >
 
@@ -69,14 +69,14 @@
     [ self.sendersArrayController  removeObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) ];
     [ self.messagesArrayController removeObserver: self forKeyPath: NSStringFromSelector( @selector( selection ) ) ];
     
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( fontName ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( fontSize ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorR ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorG ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorB ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorR ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorG ) ) ];
-    [ [ Preferences sharedInstance ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorB ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( fontName ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( fontSize ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorR ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorG ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorB ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorR ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorG ) ) ];
+    [ [ Preferences shared ] removeObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorB ) ) ];
 }
 
 - ( void )windowDidLoad
@@ -98,14 +98,14 @@
     self.messagesArrayController.content = self.asl.messages;
     self.textView.textContainerInset     = NSMakeSize( 10.0, 15.0 );
     
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( fontName ) )         options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( fontSize ) )         options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorR ) ) options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorG ) ) options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorB ) ) options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorR ) ) options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorG ) ) options: NSKeyValueObservingOptionNew context: NULL ];
-    [ [ Preferences sharedInstance ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorB ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( fontName ) )         options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( fontSize ) )         options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorR ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorG ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( backgroundColorB ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorR ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorG ) ) options: NSKeyValueObservingOptionNew context: NULL ];
+    [ [ Preferences shared ] addObserver: self forKeyPath: NSStringFromSelector( @selector( foregroundColorB ) ) options: NSKeyValueObservingOptionNew context: NULL ];
     
     [ self updateDisplaySettings ];
     
@@ -133,7 +133,7 @@
 {
     if
     (
-        object == [ Preferences sharedInstance ]
+        object == [ Preferences shared ]
         &&
         (
                [ keyPath isEqualToString: NSStringFromSelector( @selector( fontName ) ) ]
@@ -219,32 +219,32 @@
     NSColor  * background;
     NSColor  * foreground;
     
-    fontName = [ Preferences sharedInstance ].fontName;
+    fontName = [ Preferences shared ].fontName;
     font     = nil;
     
     if( fontName.length > 0 )
     {
-        font = [ NSFont fontWithName: fontName size: [ Preferences sharedInstance ].fontSize ];
+        font = [ NSFont fontWithName: fontName size: [ Preferences shared ].fontSize ];
     }
     
     if( font == nil )
     {
-        font = [ NSFont fontWithName: @"Consolas" size: [ Preferences sharedInstance ].fontSize ];
+        font = [ NSFont fontWithName: @"Consolas" size: [ Preferences shared ].fontSize ];
     }
     
     if( font == nil )
     {
-        font = [ NSFont fontWithName: @"Menlo" size: [ Preferences sharedInstance ].fontSize ];
+        font = [ NSFont fontWithName: @"Menlo" size: [ Preferences shared ].fontSize ];
     }
     
     if( font == nil )
     {
-        font = [ NSFont fontWithName: @"Monaco" size: [ Preferences sharedInstance ].fontSize ];
+        font = [ NSFont fontWithName: @"Monaco" size: [ Preferences shared ].fontSize ];
     }
     
     if( font == nil )
     {
-        font = [ NSFont systemFontOfSize: [ Preferences sharedInstance ].fontSize ];
+        font = [ NSFont systemFontOfSize: [ Preferences shared ].fontSize ];
     }
     
     if( font != nil )
@@ -252,8 +252,8 @@
         self.textView.font = font;
     }
     
-    background = [ NSColor colorWithDeviceRed: [ Preferences sharedInstance ].backgroundColorR green: [ Preferences sharedInstance ].backgroundColorG blue: [ Preferences sharedInstance ].backgroundColorB alpha: 1.0 ];
-    foreground = [ NSColor colorWithDeviceRed: [ Preferences sharedInstance ].foregroundColorR green: [ Preferences sharedInstance ].foregroundColorG blue: [ Preferences sharedInstance ].foregroundColorB alpha: 1.0 ];
+    background = [ NSColor colorWithDeviceRed: [ Preferences shared ].backgroundColorR green: [ Preferences shared ].backgroundColorG blue: [ Preferences shared ].backgroundColorB alpha: 1.0 ];
+    foreground = [ NSColor colorWithDeviceRed: [ Preferences shared ].foregroundColorR green: [ Preferences shared ].foregroundColorG blue: [ Preferences shared ].foregroundColorB alpha: 1.0 ];
     
     self.textView.backgroundColor = background;
     self.textView.textColor       = foreground;
