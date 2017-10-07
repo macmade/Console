@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2015 Jean-David Gadina - www-xs-labs.com
+ * Copyright (c) 2017 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,40 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/*!
- * @header      ArrayIsNotEmptyValueTransformer.h
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
+import Foundation
 
-#import <Cocoa/Cocoa.h>
+@objc class NumberToStringValueTransformer: ValueTransformer
+{
+    @objc public override static func allowsReverseTransformation() -> Bool
+    {
+        return true
+    }
+    
+    @objc public override static func transformedValueClass() -> Swift.AnyClass
+    {
+        return NSString.self
+    }
+    
+    @objc public override func transformedValue( _ value: Any? ) -> Any?
+    {
+        guard let number = value as? NSNumber else
+        {
+            return "" as NSString
+        }
+        
+        return number.stringValue
+    }
+    
+    @objc public override func reverseTransformedValue( _ value: Any? ) -> Any?
+    {
+        guard let string = value as? NSString else
+        {
+            return NSNumber( value: 0 )
+        }
+        
+        return NSNumber( value: string.doubleValue )
+    }
+}
 
-@interface ArrayIsNotEmptyValueTransformer: NSValueTransformer
 
-@end
+

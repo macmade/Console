@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2015 Jean-David Gadina - www-xs-labs.com
+ * Copyright (c) 2017 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,24 +21,3 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
-
-/*!
- * @header      Preferences.pch
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
-
-#import "../Submodules/SeriousCode/clang-warnings.h"
-
-#ifdef __OBJC__
-    
-    #import <Cocoa/Cocoa.h>
-    
-    #ifndef NS_ASSUME_NONNULL_BEGIN
-    #define NS_ASSUME_NONNULL_BEGIN
-    #endif
-    
-    #ifndef NS_ASSUME_NONNULL_END
-    #define NS_ASSUME_NONNULL_END
-    #endif
-    
-#endif

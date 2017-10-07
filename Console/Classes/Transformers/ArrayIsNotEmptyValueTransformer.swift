@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2015 Jean-David Gadina - www-xs-labs.com
+ * Copyright (c) 2017 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,43 +22,29 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-/*!
- * @file        NumberToStringValueTransformer.m
- * @copyright   (c) 2016, Jean-David Gadina - www.xs-labs.com
- */
+import Foundation
 
-#import "NumberToStringValueTransformer.h"
-
-@implementation NumberToStringValueTransformer
-
-+ ( BOOL )allowsReverseTransformation
+@objc class ArrayIsNotEmptyValueTransformer: ValueTransformer
 {
-    return YES;
-}
-
-+ ( Class )transformedValueClass
-{
-    return [ NSString class ];
-}
-
-- ( id )transformedValue: ( id )value
-{
-    if( [ value isKindOfClass: [ NSNumber class ] ] )
+    @objc public override static func allowsReverseTransformation() -> Bool
     {
-        return ( ( NSNumber * )value ).stringValue;
+        return false
     }
     
-    return nil;
-}
-
-- ( id )reverseTransformedValue: ( id )value
-{
-    if( [ value isKindOfClass: [ NSString class ] ] )
+    @objc public override static func transformedValueClass() -> Swift.AnyClass
     {
-        return [ NSNumber numberWithDouble: ( ( NSString * )value ).doubleValue ];
+        return NSNumber.self
     }
     
-    return nil;
+    @objc public override func transformedValue( _ value: Any? ) -> Any?
+    {
+        guard let array = value as? NSArray else
+        {
+            return NSNumber( booleanLiteral: false )
+        }
+        
+        return NSNumber( booleanLiteral: ( array.count > 0 ) ? true : false )
+    }
 }
 
-@end
+

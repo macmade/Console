@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052CAA311DA38B40001536E4 /* NumberToStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 052CAA301DA38B40001536E4 /* NumberToStringValueTransformer.m */; };
-		052CAA361DA38B75001536E4 /* ArrayIsEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 052CAA331DA38B75001536E4 /* ArrayIsEmptyValueTransformer.m */; };
-		052CAA371DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 052CAA351DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.m */; };
 		052CAA3A1DA394D7001536E4 /* Console.icns in Resources */ = {isa = PBXBuildFile; fileRef = 052CAA391DA394D7001536E4 /* Console.icns */; };
 		052CAA3D1DA39534001536E4 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 052CAA3C1DA39534001536E4 /* AboutWindowController.m */; };
 		052CAA401DA39564001536E4 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052CAA3E1DA39564001536E4 /* AboutWindowController.xib */; };
 		053291051DA44EF200E46312 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 053291041DA44EF200E46312 /* Defaults.plist */; };
+		055F18881F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18861F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift */; };
+		055F18891F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18871F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift */; };
+		055F188B1F893A4E00EBDEE1 /* NumberToStringValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F188A1F893A4E00EBDEE1 /* NumberToStringValueTransformer.swift */; };
 		058CC9B61E6E123E00DC4DE5 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 058CC9B51E6E123E00DC4DE5 /* Preferences.m */; };
 		05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D381BB044F30070E7F0 /* ASLMessage.m */; };
 		05A78D3C1BB050670070E7F0 /* ASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D3B1BB050670070E7F0 /* ASL.m */; };
@@ -29,17 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		052CAA2F1DA38B40001536E4 /* NumberToStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberToStringValueTransformer.h; sourceTree = "<group>"; };
-		052CAA301DA38B40001536E4 /* NumberToStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberToStringValueTransformer.m; sourceTree = "<group>"; };
-		052CAA321DA38B75001536E4 /* ArrayIsEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayIsEmptyValueTransformer.h; sourceTree = "<group>"; };
-		052CAA331DA38B75001536E4 /* ArrayIsEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayIsEmptyValueTransformer.m; sourceTree = "<group>"; };
-		052CAA341DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayIsNotEmptyValueTransformer.h; sourceTree = "<group>"; };
-		052CAA351DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayIsNotEmptyValueTransformer.m; sourceTree = "<group>"; };
 		052CAA391DA394D7001536E4 /* Console.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Console.icns; sourceTree = "<group>"; };
 		052CAA3B1DA39534001536E4 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
 		052CAA3C1DA39534001536E4 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
 		052CAA3F1DA39564001536E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutWindowController.xib; sourceTree = "<group>"; };
 		053291041DA44EF200E46312 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		055F18851F893A1C00EBDEE1 /* Console-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Console-Bridging-Header.h"; sourceTree = "<group>"; };
+		055F18861F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayIsNotEmptyValueTransformer.swift; sourceTree = "<group>"; };
+		055F18871F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayIsEmptyValueTransformer.swift; sourceTree = "<group>"; };
+		055F188A1F893A4E00EBDEE1 /* NumberToStringValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberToStringValueTransformer.swift; sourceTree = "<group>"; };
 		057404831E6F57BB009F5A18 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		058CC9B51E6E123E00DC4DE5 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		05A78D371BB044F30070E7F0 /* ASLMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLMessage.h; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 		05EE15DA1EBCEBC8004AED58 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		05F921701BB0AACE00FD011C /* ASLSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLSender.h; sourceTree = "<group>"; };
 		05F921711BB0AACE00FD011C /* ASLSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLSender.m; sourceTree = "<group>"; };
-		05F921731BB0AC0F00FD011C /* Console-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Console-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +78,9 @@
 		052CAA2E1DA38B40001536E4 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				052CAA321DA38B75001536E4 /* ArrayIsEmptyValueTransformer.h */,
-				052CAA331DA38B75001536E4 /* ArrayIsEmptyValueTransformer.m */,
-				052CAA341DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.h */,
-				052CAA351DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.m */,
-				052CAA2F1DA38B40001536E4 /* NumberToStringValueTransformer.h */,
-				052CAA301DA38B40001536E4 /* NumberToStringValueTransformer.m */,
+				055F18871F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift */,
+				055F18861F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift */,
+				055F188A1F893A4E00EBDEE1 /* NumberToStringValueTransformer.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -143,7 +137,6 @@
 		05BF7FFA1BAC748800A88F65 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				05F921731BB0AC0F00FD011C /* Console-Prefix.pch */,
 				053291041DA44EF200E46312 /* Defaults.plist */,
 				05BF80021BAC748800A88F65 /* Info.plist */,
 				057404831E6F57BB009F5A18 /* Macros.h */,
@@ -155,6 +148,7 @@
 		05BF80081BAC754400A88F65 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				055F18851F893A1C00EBDEE1 /* Console-Bridging-Header.h */,
 				052CAA3B1DA39534001536E4 /* AboutWindowController.h */,
 				052CAA3C1DA39534001536E4 /* AboutWindowController.m */,
 				05BF80091BAC754400A88F65 /* ApplicationDelegate.h */,
@@ -217,12 +211,13 @@
 		05BF7FEC1BAC748800A88F65 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
 					05BF7FF31BAC748800A88F65 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 326Y53CJMD;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -267,16 +262,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				05D79B411E6E117900A9467D /* PreferencesWindowController.m in Sources */,
-				052CAA371DA38B75001536E4 /* ArrayIsNotEmptyValueTransformer.m in Sources */,
+				055F18881F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift in Sources */,
 				052CAA3D1DA39534001536E4 /* AboutWindowController.m in Sources */,
 				05A78D3F1BB058850070E7F0 /* MainWindowController.m in Sources */,
-				052CAA311DA38B40001536E4 /* NumberToStringValueTransformer.m in Sources */,
 				05A78D3C1BB050670070E7F0 /* ASL.m in Sources */,
-				052CAA361DA38B75001536E4 /* ArrayIsEmptyValueTransformer.m in Sources */,
 				05BF7FFC1BAC748800A88F65 /* main.m in Sources */,
 				05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */,
 				05BF800F1BAC754400A88F65 /* ApplicationDelegate.m in Sources */,
+				055F18891F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift in Sources */,
 				058CC9B61E6E123E00DC4DE5 /* Preferences.m in Sources */,
+				055F188B1F893A4E00EBDEE1 /* NumberToStringValueTransformer.swift in Sources */,
 				05F921721BB0AACE00FD011C /* ASLSender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +325,7 @@
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ANALYZER_OBJC_ATSYNC = YES;
 				CLANG_ANALYZER_OBJC_COLLECTIONS = YES;
 				CLANG_ANALYZER_OBJC_DEALLOC = YES;
@@ -356,8 +352,12 @@
 				CLANG_MODULES_AUTOLINK = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -365,18 +365,23 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_FLOAT_CONVERSION = YES_ERROR;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES_ERROR;
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES_ERROR;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -430,10 +435,15 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = full;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SUPPRESS_WARNINGS = NO;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -448,6 +458,7 @@
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ANALYZER_OBJC_ATSYNC = YES;
 				CLANG_ANALYZER_OBJC_COLLECTIONS = YES;
 				CLANG_ANALYZER_OBJC_DEALLOC = YES;
@@ -474,8 +485,12 @@
 				CLANG_MODULES_AUTOLINK = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -483,18 +498,23 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_FLOAT_CONVERSION = YES_ERROR;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES_ERROR;
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES_ERROR;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -542,9 +562,14 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = full;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SUPPRESS_WARNINGS = NO;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -553,15 +578,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CC = "$(SRCROOT)/Scripts/ccache.sh";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 326Y53CJMD;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Console/Console-Prefix.pch";
 				INFOPLIST_FILE = Console/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.Console";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Console/Classes/Console-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -569,15 +594,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 326Y53CJMD;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Console/Console-Prefix.pch";
 				INFOPLIST_FILE = Console/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.Console";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Console/Classes/Console-Bridging-Header.h";
 			};
 			name = Release;
 		};
