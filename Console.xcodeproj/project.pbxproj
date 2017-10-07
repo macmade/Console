@@ -16,12 +16,11 @@
 		055F18901F893CB100EBDEE1 /* Console.AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055F188C1F893C4500EBDEE1 /* Console.AboutWindowController.xib */; };
 		055F18921F893D0800EBDEE1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18911F893D0800EBDEE1 /* PreferencesWindowController.swift */; };
 		055F18941F893D4E00EBDEE1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18931F893D4E00EBDEE1 /* Preferences.swift */; };
+		055F18961F893E2E00EBDEE1 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18951F893E2E00EBDEE1 /* ApplicationDelegate.swift */; };
 		05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D381BB044F30070E7F0 /* ASLMessage.m */; };
 		05A78D3C1BB050670070E7F0 /* ASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D3B1BB050670070E7F0 /* ASL.m */; };
 		05A78D3F1BB058850070E7F0 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D3E1BB058850070E7F0 /* MainWindowController.m */; };
 		05A78D421BB058990070E7F0 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A78D401BB058990070E7F0 /* MainWindowController.xib */; };
-		05BF7FFC1BAC748800A88F65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF7FFB1BAC748800A88F65 /* main.m */; };
-		05BF800F1BAC754400A88F65 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */; };
 		05BF80111BAC754400A88F65 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BF800D1BAC754400A88F65 /* MainMenu.xib */; };
 		05D79B3B1E6E116D00A9467D /* Console.PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05D79B391E6E116D00A9467D /* Console.PreferencesWindowController.xib */; };
 		05EE15DB1EBCEBC8004AED58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EE15DA1EBCEBC8004AED58 /* Cocoa.framework */; };
@@ -39,6 +38,7 @@
 		055F188E1F893C5500EBDEE1 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		055F18911F893D0800EBDEE1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		055F18931F893D4E00EBDEE1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		055F18951F893E2E00EBDEE1 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		05A78D371BB044F30070E7F0 /* ASLMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLMessage.h; sourceTree = "<group>"; };
 		05A78D381BB044F30070E7F0 /* ASLMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLMessage.m; sourceTree = "<group>"; };
 		05A78D3A1BB050670070E7F0 /* ASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASL.h; sourceTree = "<group>"; };
@@ -47,10 +47,7 @@
 		05A78D3E1BB058850070E7F0 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		05A78D411BB058990070E7F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
 		05BF7FF41BAC748800A88F65 /* Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Console.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		05BF7FFB1BAC748800A88F65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		05BF80021BAC748800A88F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05BF80091BAC754400A88F65 /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
-		05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
 		05BF800E1BAC754400A88F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		05D79B381E6E081200A9467D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		05D79B3A1E6E116D00A9467D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Console.PreferencesWindowController.xib; sourceTree = "<group>"; };
@@ -135,7 +132,6 @@
 			children = (
 				053291041DA44EF200E46312 /* Defaults.plist */,
 				05BF80021BAC748800A88F65 /* Info.plist */,
-				05BF7FFB1BAC748800A88F65 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -145,8 +141,7 @@
 			children = (
 				055F18851F893A1C00EBDEE1 /* Console-Bridging-Header.h */,
 				055F188E1F893C5500EBDEE1 /* AboutWindowController.swift */,
-				05BF80091BAC754400A88F65 /* ApplicationDelegate.h */,
-				05BF800A1BAC754400A88F65 /* ApplicationDelegate.m */,
+				055F18951F893E2E00EBDEE1 /* ApplicationDelegate.swift */,
 				05A78D361BB044F30070E7F0 /* ASL */,
 				05A78D3D1BB058850070E7F0 /* MainWindowController.h */,
 				05A78D3E1BB058850070E7F0 /* MainWindowController.m */,
@@ -256,10 +251,9 @@
 				055F18881F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift in Sources */,
 				05A78D3F1BB058850070E7F0 /* MainWindowController.m in Sources */,
 				055F18941F893D4E00EBDEE1 /* Preferences.swift in Sources */,
+				055F18961F893E2E00EBDEE1 /* ApplicationDelegate.swift in Sources */,
 				05A78D3C1BB050670070E7F0 /* ASL.m in Sources */,
-				05BF7FFC1BAC748800A88F65 /* main.m in Sources */,
 				05A78D391BB044F30070E7F0 /* ASLMessage.m in Sources */,
-				05BF800F1BAC754400A88F65 /* ApplicationDelegate.m in Sources */,
 				055F18921F893D0800EBDEE1 /* PreferencesWindowController.swift in Sources */,
 				055F18891F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift in Sources */,
 				055F188F1F893C5600EBDEE1 /* AboutWindowController.swift in Sources */,

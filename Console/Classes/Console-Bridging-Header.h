@@ -21,3 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  ******************************************************************************/
+
+#import "MainWindowController.h"
+#import "ASL.h"
+#import "ASLSender.h"
+#import "ASLMessage.h"
