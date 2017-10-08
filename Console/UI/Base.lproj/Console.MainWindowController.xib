@@ -7,7 +7,7 @@
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="Console" customModuleProvider="target">
             <connections>
                 <outlet property="messagesArrayController" destination="M7u-uq-g8l" id="cRQ-vY-iHM"/>
                 <outlet property="sendersArrayController" destination="Mli-3Q-Lgv" id="Ivs-63-gC5"/>
