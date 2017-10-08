@@ -33,6 +33,13 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                            <menuItem title="Check for Updates..." id="KLx-q9-KG5">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="KR2-C7-DWs" id="zWL-B7-mMl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="ksL-hT-MUf"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
@@ -655,5 +662,11 @@
                 </menuItem>
             </items>
         </menu>
+        <customObject id="KR2-C7-DWs" customClass="GitHubUpdater">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="user" value="macmade"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="repository" value="Console"/>
+            </userDefinedRuntimeAttributes>
+        </customObject>
     </objects>
 </document>
