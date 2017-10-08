@@ -28,7 +28,6 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import "ASLMessage.h"
 
 @class ASLMessage;
 @class ASLSender;

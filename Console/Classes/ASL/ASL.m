@@ -28,7 +28,7 @@
  */
 
 #import "ASL.h"
-#import "ASLMessage.h"
+#import "Console-Swift.h"
 #import "ASLSender.h"
 #import <asl.h>
 
