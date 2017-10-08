@@ -29,7 +29,6 @@
 
 #import "ASL.h"
 #import "Console-Swift.h"
-#import "ASLSender.h"
 #import <asl.h>
 
 @interface ASL()
