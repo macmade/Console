@@ -22,7 +22,6 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-#import "MainWindowController.h"
 #import "ASL.h"
 #import "ASLSender.h"
 #import "ASLMessage.h"
