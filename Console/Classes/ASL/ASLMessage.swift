@@ -52,14 +52,14 @@ import asl
     
     @objc public convenience override init()
     {
-        self.init( ASLMessage: nil )
+        self.init( nil )
     }
     
-    @objc public init( ASLMessage: aslmsg? )
+    @objc public init( _ message: aslmsg? )
     {
         super.init()
         
-        guard let msg = ASLMessage else
+        guard let msg = message else
         {
             return
         }

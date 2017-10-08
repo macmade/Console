@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-import Foundation
+import Cocoa
 import asl
 
 @objc class ASLSender: NSObject, NSCopying

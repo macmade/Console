@@ -18,12 +18,12 @@
 		055F18941F893D4E00EBDEE1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18931F893D4E00EBDEE1 /* Preferences.swift */; };
 		055F18961F893E2E00EBDEE1 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18951F893E2E00EBDEE1 /* ApplicationDelegate.swift */; };
 		055F18981F893F5900EBDEE1 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F18971F893F5900EBDEE1 /* MainWindowController.swift */; };
-		05A78D3C1BB050670070E7F0 /* ASL.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A78D3B1BB050670070E7F0 /* ASL.m */; };
 		05A78D421BB058990070E7F0 /* Console.MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A78D401BB058990070E7F0 /* Console.MainWindowController.xib */; };
 		05BF80111BAC754400A88F65 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BF800D1BAC754400A88F65 /* MainMenu.xib */; };
 		05CD94DF1F8A620B00B60CFC /* NSArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD94DE1F8A61F100B60CFC /* NSArrayController.swift */; };
 		05CD94E21F8A6B1800B60CFC /* ASLMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD94E11F8A6B1800B60CFC /* ASLMessage.swift */; };
 		05CD94E51F8A7A4E00B60CFC /* ASLSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD94E41F8A7A4E00B60CFC /* ASLSender.swift */; };
+		05CD94E71F8A817800B60CFC /* ASL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD94E61F8A817800B60CFC /* ASL.swift */; };
 		05D79B3B1E6E116D00A9467D /* Console.PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05D79B391E6E116D00A9467D /* Console.PreferencesWindowController.xib */; };
 		05EE15DB1EBCEBC8004AED58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EE15DA1EBCEBC8004AED58 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,6 @@
 /* Begin PBXFileReference section */
 		052CAA391DA394D7001536E4 /* Console.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Console.icns; sourceTree = "<group>"; };
 		053291041DA44EF200E46312 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
-		055F18851F893A1C00EBDEE1 /* Console-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Console-Bridging-Header.h"; sourceTree = "<group>"; };
 		055F18861F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayIsNotEmptyValueTransformer.swift; sourceTree = "<group>"; };
 		055F18871F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayIsEmptyValueTransformer.swift; sourceTree = "<group>"; };
 		055F188A1F893A4E00EBDEE1 /* NumberToStringValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberToStringValueTransformer.swift; sourceTree = "<group>"; };
@@ -41,8 +40,6 @@
 		055F18931F893D4E00EBDEE1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		055F18951F893E2E00EBDEE1 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		055F18971F893F5900EBDEE1 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		05A78D3A1BB050670070E7F0 /* ASL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASL.h; sourceTree = "<group>"; };
-		05A78D3B1BB050670070E7F0 /* ASL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASL.m; sourceTree = "<group>"; };
 		05A78D411BB058990070E7F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Console.MainWindowController.xib; sourceTree = "<group>"; };
 		05BF7FF41BAC748800A88F65 /* Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Console.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BF80021BAC748800A88F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +47,7 @@
 		05CD94DE1F8A61F100B60CFC /* NSArrayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSArrayController.swift; sourceTree = "<group>"; };
 		05CD94E11F8A6B1800B60CFC /* ASLMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLMessage.swift; sourceTree = "<group>"; };
 		05CD94E41F8A7A4E00B60CFC /* ASLSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASLSender.swift; sourceTree = "<group>"; };
+		05CD94E61F8A817800B60CFC /* ASL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASL.swift; sourceTree = "<group>"; };
 		05D79B381E6E081200A9467D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		05D79B3A1E6E116D00A9467D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Console.PreferencesWindowController.xib; sourceTree = "<group>"; };
 		05EE15DA1EBCEBC8004AED58 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -88,8 +86,7 @@
 		05A78D361BB044F30070E7F0 /* ASL */ = {
 			isa = PBXGroup;
 			children = (
-				05A78D3A1BB050670070E7F0 /* ASL.h */,
-				05A78D3B1BB050670070E7F0 /* ASL.m */,
+				05CD94E61F8A817800B60CFC /* ASL.swift */,
 				05CD94E11F8A6B1800B60CFC /* ASLMessage.swift */,
 				05CD94E41F8A7A4E00B60CFC /* ASLSender.swift */,
 			);
@@ -136,7 +133,6 @@
 		05BF80081BAC754400A88F65 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				055F18851F893A1C00EBDEE1 /* Console-Bridging-Header.h */,
 				055F188E1F893C5500EBDEE1 /* AboutWindowController.swift */,
 				055F18951F893E2E00EBDEE1 /* ApplicationDelegate.swift */,
 				05A78D361BB044F30070E7F0 /* ASL */,
@@ -253,10 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CD94E71F8A817800B60CFC /* ASL.swift in Sources */,
 				055F18881F893A1D00EBDEE1 /* ArrayIsNotEmptyValueTransformer.swift in Sources */,
 				055F18941F893D4E00EBDEE1 /* Preferences.swift in Sources */,
 				055F18961F893E2E00EBDEE1 /* ApplicationDelegate.swift in Sources */,
-				05A78D3C1BB050670070E7F0 /* ASL.m in Sources */,
 				055F18921F893D0800EBDEE1 /* PreferencesWindowController.swift in Sources */,
 				05CD94E21F8A6B1800B60CFC /* ASLMessage.swift in Sources */,
 				055F18891F893A1D00EBDEE1 /* ArrayIsEmptyValueTransformer.swift in Sources */,
@@ -578,7 +574,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.Console";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Console/Classes/Console-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -594,7 +589,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.Console";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Console/Classes/Console-Bridging-Header.h";
 			};
 			name = Release;
 		};
