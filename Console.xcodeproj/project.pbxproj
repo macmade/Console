@@ -562,7 +562,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05D53C5E2141A9BD00D44A6F /* Debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 			};
 			name = Debug;
