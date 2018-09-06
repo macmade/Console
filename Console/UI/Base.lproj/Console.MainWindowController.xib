@@ -383,7 +383,7 @@
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView id="RBB-b2-JkB">
-                                                                                    <rect key="frame" x="155" y="1" width="280" height="17"/>
+                                                                                    <rect key="frame" x="154.5" y="1" width="280" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="263" translatesAutoresizingMaskIntoConstraints="NO" id="4Qf-Ew-Wo3">
@@ -428,7 +428,7 @@
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView id="edx-xO-m1m">
-                                                                                    <rect key="frame" x="438" y="1" width="120" height="17"/>
+                                                                                    <rect key="frame" x="437.5" y="1" width="120" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-DW-FLP">
@@ -474,7 +474,7 @@
                                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                             <prototypeCellViews>
                                                                                 <tableCellView id="MQK-Pj-KnU">
-                                                                                    <rect key="frame" x="561" y="1" width="80" height="17"/>
+                                                                                    <rect key="frame" x="560.5" y="1" width="80" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="111" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-Lg-eQ0">
