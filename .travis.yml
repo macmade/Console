@@ -1,6 +1,6 @@
 language: objective-c
 xcode_project: Console.xcodeproj
 xcode_scheme: Console
-osx_image: xcode9.1
+osx_image: xcode10
 script:
     - xcodebuild build -project Console.xcodeproj -scheme Console
