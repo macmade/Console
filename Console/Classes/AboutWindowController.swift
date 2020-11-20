@@ -1,7 +1,7 @@
 /*******************************************************************************
  * The MIT License (MIT)
  * 
- * Copyright (c) 2017 Jean-David Gadina - www.xs-labs.com
+ * Copyright (c) 2020 Jean-David Gadina - www.xs-labs.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,26 +24,33 @@
 
 import Cocoa
 
-@objc class AboutWindowController: NSWindowController
+public class AboutWindowController: NSWindowController
 {
     @objc private dynamic var name:      String?
     @objc private dynamic var version:   String?
     @objc private dynamic var copyright: String?
     
-    override var windowNibName: NSNib.Name?
+    public override var windowNibName: NSNib.Name?
     {
         return NSNib.Name( NSStringFromClass( type( of: self ) ) )
     }
     
-    override func windowDidLoad()
+    override public func windowDidLoad()
     {
         super.windowDidLoad()
         
-        self.window?.titlebarAppearsTransparent = true
-        self.window?.titleVisibility            = .hidden
+        let version = Bundle.main.object( forInfoDictionaryKey: "CFBundleShortVersionString" ) as? String ?? "0.0.0"
         
-        self.name      = Bundle.main.object( forInfoDictionaryKey: "CFBundleName"               ) as? String
-        self.version   = Bundle.main.object( forInfoDictionaryKey: "CFBundleShortVersionString" ) as? String
-        self.copyright = Bundle.main.object( forInfoDictionaryKey: "NSHumanReadableCopyright"   ) as? String
+        if let build = Bundle.main.object( forInfoDictionaryKey: "CFBundleVersion" ) as? String
+        {
+            self.version = "\(version) (\(build))"
+        }
+        else
+        {
+            self.version = version
+        }
+        
+        self.name      = Bundle.main.object( forInfoDictionaryKey: "CFBundleName"             ) as? String
+        self.copyright = Bundle.main.object( forInfoDictionaryKey: "NSHumanReadableCopyright" ) as? String
     }
 }
