@@ -408,7 +408,7 @@
 		05BF7FEC1BAC748800A88F65 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
 					05BF7FF31BAC748800A88F65 = {
@@ -421,7 +421,7 @@
 			};
 			buildConfigurationList = 05BF7FEF1BAC748800A88F65 /* Build configuration list for PBXProject "Console" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,

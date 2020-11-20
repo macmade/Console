@@ -151,7 +151,7 @@ import Cocoa
         panel?.makeKeyAndOrderFront( sender )
     }
     
-    @IBAction override func changeFont( _ sender: Any? )
+    @IBAction func changeFont( _ sender: Any? )
     {
         guard let manager = ( sender as AnyObject? ) as? NSFontManager else
         {
